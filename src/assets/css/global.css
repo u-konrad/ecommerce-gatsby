@@ -65,4 +65,5 @@ a {
 
   .page{
       padding: 3rem;
+      margin-top: var(--height-navbar);
   }

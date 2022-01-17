@@ -41,13 +41,13 @@ const Navbar = () => {
               </div>
             </div>
           </div>
+          <div className="overlay"></div>     
 
         </div>
         <Link to="/cart" className="cart-link">
           <BsCart />
         </Link>
       </div>
-      <div className="submenu"></div>
     </Wrapper>
   )
 }
@@ -98,7 +98,6 @@ const Wrapper = styled.nav`
     position: absolute;
     top: var(--height-navbar);
     left: 0;
-    z-index: 99;
     background-color: white;
     border-top: 1px solid lightgray;
   }
@@ -118,6 +117,21 @@ const Wrapper = styled.nav`
   }
   .cat-list a:hover {
     text-decoration: underline;
+  }
+
+  .overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top:var(--height-navbar);
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    display: none;
+  }
+
+  .gender-container:hover ~ .overlay{
+    display: block;
   }
 `
 

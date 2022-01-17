@@ -7,12 +7,29 @@ const categoriesM = ['kurtki','swetry','spodnie','koszule','t-shirty']
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
 
+  createPage({
+    path:'/women',
+    component: path.resolve(`src/templates/category-template.js`),
+    context:{
+      gender:'female'
+    }
+  })
+
+  createPage({
+    path:'/men',
+    component: path.resolve(`src/templates/category-template.js`),
+    context:{
+      gender:'male'
+    }
+  })
+
   categoriesF.forEach(category => {
     createPage({
       path: `/women/${category}`,
       component: path.resolve(`src/templates/category-template.js`),
       context: {
         category,
+        categoryRegex:`/${category}/`,
         gender:'female'
       },
     })
@@ -24,6 +41,7 @@ exports.createPages = async ({ actions }) => {
       component: path.resolve(`src/templates/category-template.js`),
       context: {
         category,
+        categoryRegex:`/${category}/`,
         gender:'male'
       },
     })
