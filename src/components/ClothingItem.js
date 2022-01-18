@@ -10,7 +10,6 @@ const ClothingItem = ({ price, img, name,id }) => {
           className="list-img"
           image={getImage(img)}
           alt=""
-          width="300px"
         />
       </div>
       <h5 className="mt-2">{name}</h5>

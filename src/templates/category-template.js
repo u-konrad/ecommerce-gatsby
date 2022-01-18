@@ -22,11 +22,11 @@ const CategoryTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Wrapper className="page">
-        <div className="sidebar pt-5">
+        <div className="sidebar ">
           <ul>
             <li className="category-item mb-2">
               <Link to={`/${linkGender}`}>
-                <strong>Wszystko</strong>
+                <strong>{titleGender.toUpperCase()}</strong>
               </Link>
             </li>
             {categories.map(category => (
@@ -38,7 +38,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
             ))}
           </ul>
         </div>
-        <div className="items-panel">
+        <div className="items-panel ">
           <h2 className="mb-3">{title}</h2>
           <div className="items-container">
             {data.allContentfulClothing.nodes.map(item => (
@@ -54,6 +54,10 @@ const CategoryTemplate = ({ data, pageContext }) => {
 const Wrapper = styled.main`
   --width-sidebar: 150px;
 
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+
+
   .category-item {
     padding-bottom: 15px;
   }
@@ -63,19 +67,18 @@ const Wrapper = styled.main`
 
   .sidebar {
     position: fixed;
-    top: var(--height-navbar);
-    left: 3rem;
+    top: calc(var(--height-navbar) + var(--padding-top-page));
+    left: max(calc((100vw - var(--width-page))/2),3rem);
   }
 
   .items-panel {
-    margin-left: var(--width-sidebar);
-    padding-left: 100px;
+
+   grid-column: 3/-1;
+   grid-row: 1/1;
   }
 
   .items-container {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 1rem; */
+
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,6 +90,12 @@ const Wrapper = styled.main`
     width: 350px;
     object-fit: cover;
     transition: 0.5s ease-in-out;
+  }
+
+  @media screen and (max-width:1360px) {
+    .list-img{
+      width:300px
+    }
   }
 
   .list-img:hover {
