@@ -30,7 +30,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
               </Link>
             </li>
             {categories.map(category => (
-              <li key={category} className="category-item ms-4">
+              <li key={category} className="category-item">
                 <Link to={`/${linkGender}/${category}`}>
                   {capitalize(category)}
                 </Link>
@@ -55,8 +55,7 @@ const Wrapper = styled.main`
   --width-sidebar: 150px;
 
   display: grid;
-  grid-template-columns: repeat(12,1fr);
-
+  grid-template-columns: repeat(12, 1fr);
 
   .category-item {
     padding-bottom: 15px;
@@ -68,35 +67,60 @@ const Wrapper = styled.main`
   .sidebar {
     position: fixed;
     top: calc(var(--height-navbar) + var(--padding-top-page));
-    left: max(calc((100vw - var(--width-page))/2),3rem);
+    left: max(calc((100vw - var(--width-page)) / 2), 3rem);
   }
 
   .items-panel {
-
-   grid-column: 3/-1;
-   grid-row: 1/1;
+    grid-column: 3/-1;
+    grid-row: 1/1;
   }
 
   .items-container {
-
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    grid-gap: 1rem; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
   }
 
-  .list-img {
-    height: 500px;
-    width: 350px;
-    object-fit: cover;
-    transition: 0.5s ease-in-out;
+  .grid-item {
+    width: 100%;
   }
 
-  @media screen and (max-width:1360px) {
-    .list-img{
-      width:300px
+  .list-img {
+    /* height: 500px; */
+    width: 100%;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    aspect-ratio: 2/3;
+  }
+
+  @media screen and (max-width: 1170px) {
+    .items-container {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    .items-panel {
+      grid-column: 1/-1;
+      grid-row: 1/1;
+    }
+
+    .sidebar {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .items-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
 
   .list-img:hover {
     opacity: 0.5;
@@ -112,7 +136,7 @@ export const query = graphql`
         price
         name
         img {
-          gatsbyImageData(width: 350, layout: CONSTRAINED, quality: 85)
+          gatsbyImageData(width: 400, layout: CONSTRAINED, quality: 85)
         }
         gender
         id
