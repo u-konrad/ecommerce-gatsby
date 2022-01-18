@@ -4,10 +4,12 @@ import Layout from "../components/layout"
 import { categoriesF, categoriesM } from "../constants/categories"
 import styled from "styled-components"
 import ClothingItem from "../components/ClothingItem"
+import { capitalize, convertGenderToPl } from "../utils/utils"
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const linkGender = pageContext.gender === "male" ? "men" : "women"
-  const titleGender = pageContext.gender === "male" ? "męskie" : "damskie"
+  const titleGender = convertGenderToPl(pageContext.gender)
+
   let title
   if (!pageContext.category) {
     title = "UBRANIA " + titleGender.toLocaleUpperCase()
@@ -16,10 +18,6 @@ const CategoryTemplate = ({ data, pageContext }) => {
   }
 
   const categories = pageContext.gender === "male" ? categoriesM : categoriesF
-
-  const capitalize = str => {
-    return str.charAt(0).toLocaleUpperCase() + str.slice(1)
-  }
 
   return (
     <Layout>
@@ -81,18 +79,18 @@ const Wrapper = styled.main`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
   }
 
   .list-img {
-    height: 450px;
-    width: 300px;
+    height: 500px;
+    width: 350px;
     object-fit: cover;
     transition: 0.5s ease-in-out;
   }
 
   .list-img:hover {
-      opacity: 0.5;
+    opacity: 0.5;
   }
 `
 
@@ -105,9 +103,10 @@ export const query = graphql`
         price
         name
         img {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, quality: 85)
+          gatsbyImageData(width: 350, layout: CONSTRAINED, quality: 85)
         }
         gender
+        id
       }
     }
   }

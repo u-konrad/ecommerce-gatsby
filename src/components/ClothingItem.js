@@ -1,9 +1,10 @@
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import React from "react"
+import { Link } from "gatsby"
 
-const ClothingItem = ({ price, img, name }) => {
+const ClothingItem = ({ price, img, name,id }) => {
   return (
-    <div>
+    <Link to={`/${id}`}>
       <div>
         <GatsbyImage
           className="list-img"
@@ -14,7 +15,7 @@ const ClothingItem = ({ price, img, name }) => {
       </div>
       <h5 className="mt-2">{name}</h5>
       <p>{price} PLN</p>
-    </div>
+    </Link>
   )
 }
 
