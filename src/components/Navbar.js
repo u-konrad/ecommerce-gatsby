@@ -7,7 +7,7 @@ import { categoriesF,categoriesM } from "../constants/categories"
 const Navbar = () => {
   return (
     <Wrapper className="nav py-0">
-      <div className="d-flex flex-row align-items-center justify-content-between w-100 px-5 ">
+      <div className="d-flex flex-row align-items-center justify-content-between page-size ">
         <div className="d-flex flex-row align-items-center">
           <div className="logo">Fashion</div>
 

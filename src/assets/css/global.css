@@ -64,8 +64,14 @@ ul {
   padding: 0;
 }
 
+.page-size{
+  max-width: var(--width-page);
+  width: 94vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .page {
-  /* padding: 3rem; */
   max-width: var(--width-page);
   width: 94vw;
   padding-top: var(--padding-top-page);
@@ -75,7 +81,7 @@ ul {
 }
 
 @media screen and (max-width:569px) {
-  .page {
+  .page, .page-size {
     width: 90vw;
 
 

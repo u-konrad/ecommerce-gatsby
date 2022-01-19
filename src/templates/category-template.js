@@ -39,7 +39,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
           </ul>
         </div>
         <div className="items-panel ">
-          <h2 className="mb-3">{title}</h2>
+          <h2 className="mb-3" >{title}</h2>
           <div className="items-container">
             {data.allContentfulClothing.nodes.map(item => (
               <ClothingItem {...item} />
@@ -57,6 +57,8 @@ const Wrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
+
+
   .category-item {
     padding-bottom: 15px;
   }
@@ -66,7 +68,7 @@ const Wrapper = styled.main`
 
   .sidebar {
     position: fixed;
-    top: calc(var(--height-navbar) + var(--padding-top-page));
+    top: calc(var(--height-navbar) + var(--padding-top-page) );
     left: max(calc((100vw - var(--width-page)) / 2), 3rem);
   }
 

@@ -5,22 +5,36 @@ import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getImage } from "gatsby-plugin-image"
 import { capitalize, convertGenderToPl } from "../utils/utils"
+import { cartActions } from "../store/store"
+import { useDispatch } from "react-redux"
 
 const ProductPage = ({ data }) => {
-  const { name, img, category, gender, price } = data.contentfulClothing
+  const { name, img, category, gender, price, id } = data.contentfulClothing
+  const dispatch = useDispatch()
 
   return (
     <Layout>
       <Wrapper className="page">
         <div className="main-container">
-          <GatsbyImage className="product-img" alt={name} image={getImage(img)} />
+          <GatsbyImage
+            className="product-img"
+            alt={name}
+            image={getImage(img)}
+          />
           <div className="info-container">
             <p>
               {capitalize(category)} {convertGenderToPl(gender)}
             </p>
             <h1>{name}</h1>
             <h3>{price} PLN</h3>
-            <button className="btn btn-dark">Dodaj do koszyka</button>
+            <button
+              className="btn btn-dark"
+              onClick={() =>
+                dispatch(cartActions.addItem({ item: data.contentfulClothing }))
+              }
+            >
+              Dodaj do koszyka
+            </button>
           </div>
         </div>
       </Wrapper>
@@ -63,14 +77,14 @@ const Wrapper = styled.main`
     padding-left: 100px;
   }
 
-  .product-img{
+  .product-img {
     height: 750px;
     width: 500px;
     object-fit: cover;
   }
 
-  .btn{
-      border-radius: 0;
+  .btn {
+    border-radius: 0;
   }
 `
 
