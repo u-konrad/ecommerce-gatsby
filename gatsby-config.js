@@ -25,5 +25,11 @@ module.exports = {
         accessToken:`r1HrWdnO4JFLQ_uskHRiJhZG_yd0cVX--udpiclCtmo`,
       },
     },
+    {
+      resolve: "gatsby-plugin-styletron",
+      options: {
+        prefix: "_",
+      },
+    },
   ],
 }

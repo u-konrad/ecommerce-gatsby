@@ -1,15 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { MdOutlineDelete,MdRemove } from "react-icons/md"
+import { MdOutlineDelete, MdRemove } from "react-icons/md"
 import { BsPlusLg } from "react-icons/bs"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getImage } from "gatsby-plugin-image"
 import { useDispatch } from "react-redux"
 import { cartActions } from "../store/store"
 
+
 const CartItem = ({ item }) => {
   const dispatch = useDispatch()
-  const { price, img, name, id, quantity } = item
+  const { price, img, name, id, quantity,size } = item
 
   const addHandler = () => {
     dispatch(cartActions.incrementItem({ id }))
@@ -33,20 +34,37 @@ const CartItem = ({ item }) => {
       />
       <div className=" py-1">
         <h6>{name}</h6>
-        <p>Cena: {price} PLN</p>
+        <p className="mb-0">Cena: {price} PLN</p>
+        <p className="mt-0">Rozmiar: <strong>{size}</strong></p>
         <div className="mt-auto">
-        <p className="lead">Ilość: <strong>{quantity}</strong> </p>    
-        <button className={`btn btn-sm  btn-outline-dark me-1 ${quantity===9?"disabled":""}`} onClick={addHandler}>
-         <BsPlusLg/>
-        </button>
-        <button className={`btn btn-sm  btn-outline-dark me-1 ${quantity===1?"disabled":""}`} onClick={removeOneHandler}>
-        <MdRemove/>
-        </button>
+          <p className="lead mb-1">
+            Ilość: {" "}
+          </p>
+          <button
+            className={`btn btn-sm  btn-outline-dark me-1 ${
+              quantity === 9 ? "disabled" : ""
+            }`}
+            onClick={addHandler}
+          >
+            <BsPlusLg />
+          </button>
+          <span className="mx-2"><strong>{quantity}</strong></span>
+          <button
+            className={`btn btn-sm  btn-outline-dark me-1 ${
+              quantity === 1 ? "disabled" : ""
+            }`}
+            onClick={removeOneHandler}
+          >
+            <MdRemove />
+          </button>
         </div>
       </div>
-      <div className="d-flex flex-column justify-content-between align-items-end ms-auto h-100 py-2">
+      <div className="d-flex flex-column justify-content-between align-items-end ms-auto h-100 ">
         <p className="lead">{quantity * price} PLN</p>
-        <button className="btn btn-sm btn-outline-danger" onClick={removeAllHandler}>
+        <button
+          className="btn btn-sm btn-outline-danger"
+          onClick={removeAllHandler}
+        >
           <MdOutlineDelete />
         </button>
       </div>
@@ -63,6 +81,12 @@ const Wrapper = styled.div`
     aspect-ratio: 2/3;
     object-fit: cover;
     margin-right: 2rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    .product-img {
+      margin-right: 0.5rem;
+    }
   }
 `
 

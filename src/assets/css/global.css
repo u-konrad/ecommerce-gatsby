@@ -19,12 +19,13 @@
   font-style: normal;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
 :root {
   --clr-accent: #d9832e;
+  --clr-bg: #f4f4f4;
   --height-navbar: 72px;
   --width-page: 1420px;
   --padding-top-page: 70px;
@@ -64,7 +65,7 @@ ul {
   padding: 0;
 }
 
-.page-size{
+.page-size {
   max-width: var(--width-page);
   width: 94vw;
   margin-left: auto;
@@ -80,10 +81,17 @@ ul {
   margin-top: var(--height-navbar);
 }
 
-@media screen and (max-width:569px) {
-  .page, .page-size {
+@media screen and (max-width: 569px) {
+  .page,
+  .page-size {
     width: 90vw;
-
-
   }
+}
+
+.btn-sharp {
+  border-radius: 0;
+}
+
+.btn-dark:hover {
+  background-color: black;
 }
