@@ -27,13 +27,32 @@
 :root {
   --clr-accent: #d9832e;
   --clr-bg: #f4f4f4;
-  --height-navbar: 72px;
+  --height-navbar: 80px;
   --width-page: 1420px;
   --padding-top-page: 70px;
+  --padding-x-mobile:1rem
 }
 
 body {
   position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #DCDCDC;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 h1,
@@ -66,9 +85,23 @@ ul {
   padding: 0;
 }
 
-.page-size {
+.nav-size-horizontal{
+  width: 100vw;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@media screen and (max-width:768px) {
+
+  .nav-size-horizontal{
+    padding-left: var(--padding-x-mobile);
+    padding-right: 2rem;
+  }
+}
+
+.page-size-horizontal {
   max-width: var(--width-page);
-  width: 94vw;
+  width: 100vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -78,21 +111,7 @@ ul {
   margin-top: var(--height-navbar);
 }
 
-.page {
-  max-width: var(--width-page);
-  width: 94vw;
-  padding-top: var(--padding-top-page);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: var(--height-navbar);
-}
 
-@media screen and (max-width: 569px) {
-  .page,
-  .page-size {
-    width: 90vw;
-  }
-}
 
 .btn-sharp {
   border-radius: 0;
@@ -102,46 +121,17 @@ ul {
   background-color: black;
 }
 
-.d-flex-row-c{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.btn-icon {
+  border: none;
+  background-color: transparent;
+  font-size: 18px;
 }
 
-.d-flex-row-s{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+.btn-icon:hover {
+color: dimgray;
 }
 
-.d-flex-row-e{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-}
 
-.d-flex-column-c{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.d-flex-column-s{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.d-flex-column-e{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
 
 

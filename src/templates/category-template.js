@@ -1,14 +1,15 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { categoriesF, categoriesM } from "../constants/categories"
 import styled from "styled-components"
 import ClothingItem from "../components/ClothingItem"
-import { capitalize, convertGenderToPl } from "../utils/utils"
+import { capitalize, convertGender } from "../utils/utils"
+import Breadcrumb from "../components/Breadcrumb"
 
 const CategoryTemplate = ({ data, pageContext }) => {
-  const linkGender = pageContext.gender === "male" ? "men" : "women"
-  const titleGender = convertGenderToPl(pageContext.gender)
+  const linkGender = convertGender(pageContext.gender).nounPlural
+  const titleGender = convertGender(pageContext.gender).adj
 
   let title
   if (!pageContext.category) {
@@ -21,12 +22,14 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Wrapper className="page">
+      <Wrapper className="page-size-horizontal page-top">
         <div className="sidebar ">
           <ul>
             <li className="category-item mb-2">
               <Link to={`/${linkGender}`}>
-                <strong>{titleGender.toUpperCase()}</strong>
+                <strong>
+                  {convertGender(pageContext.gender).nounSingular.toUpperCase()}
+                </strong>
               </Link>
             </li>
             {categories.map(category => (
@@ -39,15 +42,17 @@ const CategoryTemplate = ({ data, pageContext }) => {
           </ul>
         </div>
         <div className="items-panel ">
-
-          <h2 className="mb-3" >{title}</h2>
+          <Breadcrumb
+            category={pageContext.category}
+            gender={pageContext.gender}
+          />
+          <h2 className="mb-3">{title}</h2>
           <div className="items-container">
             {data.allContentfulClothing.nodes.map(item => (
               <ClothingItem {...item} />
             ))}{" "}
           </div>
         </div>
-
       </Wrapper>
     </Layout>
   )
@@ -59,8 +64,6 @@ const Wrapper = styled.main`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
-
-
   .category-item {
     padding-bottom: 15px;
   }
@@ -70,21 +73,17 @@ const Wrapper = styled.main`
 
   .sidebar {
     position: fixed;
-    top: calc(var(--height-navbar) + var(--padding-top-page) );
+    top: calc(var(--height-navbar) + var(--padding-top-page));
     left: max(calc((100vw - var(--width-page)) / 2), 3rem);
   }
 
   .items-panel {
     grid-column: 3/-1;
     grid-row: 1/1;
+    padding-right: 3rem;
   }
 
   .items-container {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-gap: 1rem; */
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
@@ -102,9 +101,14 @@ const Wrapper = styled.main`
     aspect-ratio: 2/3;
   }
 
+  .list-img:hover {
+    opacity: 0.5;
+  }
+
   @media screen and (max-width: 1170px) {
     .items-container {
       grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0.5rem;
     }
   }
 
@@ -112,22 +116,29 @@ const Wrapper = styled.main`
     .items-panel {
       grid-column: 1/-1;
       grid-row: 1/1;
+      padding-right: 0;
     }
-
+    .items-container {
+      grid-column-gap: 0.2rem;
+    }
     .sidebar {
       display: none;
     }
-  }
 
-  @media screen and (max-width: 500px) {
-    .items-container {
-      grid-template-columns: 1fr;
+    .items-panel h2 {
+      font-size: 22px;
+      padding-left: var(--padding-x-mobile);
     }
-  }
 
+    .grid-item h5 {
+      font-size: 18px;
+      padding-left: var(--padding-x-mobile);
+    }
 
-  .list-img:hover {
-    opacity: 0.5;
+    .grid-item p {
+      font-size: 16px;
+      padding-left: var(--padding-x-mobile);
+    }
   }
 `
 

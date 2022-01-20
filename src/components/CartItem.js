@@ -44,7 +44,7 @@ const CartItem = ({ item }) => {
             className="d-flex align-items-center justify-content-between"
           >
             <button
-              className={`btn btn-sm  btn-outline-dark me-1 ${
+              className={`btn btn-sm  btn-outline-dark ${
                 quantity === 1 ? "disabled" : ""
               }`}
               onClick={removeOneHandler}
@@ -56,7 +56,7 @@ const CartItem = ({ item }) => {
             </span>
 
             <button
-              className={`btn btn-sm  btn-outline-dark me-1 ${
+              className={`btn btn-sm  btn-outline-dark ${
                 quantity === 9 ? "disabled" : ""
               }`}
               onClick={addHandler}

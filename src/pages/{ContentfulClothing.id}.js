@@ -49,7 +49,7 @@ const ProductPage = ({ data }) => {
 
   return (
     <Layout>
-      <Wrapper className="page">
+      <Wrapper className="page-top page-size-horizontal">
         <div className="main-container">
           <GatsbyImage
             className="product-img"

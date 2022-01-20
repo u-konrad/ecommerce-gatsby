@@ -20,7 +20,7 @@ const CartPage = () => {
 
   return (
     <Layout>
-      <Wrapper className="page">
+      <Wrapper className="page-top page-size-horizontal">
         {cartIsFull ? (
           <Fragment>
             <h1 className="mb-3">Koszyk</h1>
