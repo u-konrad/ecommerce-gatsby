@@ -39,6 +39,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
           </ul>
         </div>
         <div className="items-panel ">
+
           <h2 className="mb-3" >{title}</h2>
           <div className="items-container">
             {data.allContentfulClothing.nodes.map(item => (
@@ -46,6 +47,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
             ))}{" "}
           </div>
         </div>
+
       </Wrapper>
     </Layout>
   )

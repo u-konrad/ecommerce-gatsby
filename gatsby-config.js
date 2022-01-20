@@ -26,10 +26,12 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-styletron",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
-        prefix: "_",
-      },
+        rule: {
+          include: /svg/
+        }
+      }
     },
   ],
 }

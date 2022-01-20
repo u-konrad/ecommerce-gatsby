@@ -19,6 +19,7 @@
   font-style: normal;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -26,7 +27,7 @@
 :root {
   --clr-accent: #d9832e;
   --clr-bg: #f4f4f4;
-  --height-navbar: 72px;
+  --height-navbar: 120px;
   --width-page: 1420px;
   --padding-top-page: 70px;
 }
@@ -72,6 +73,11 @@ ul {
   margin-right: auto;
 }
 
+.page-top{
+  padding-top: var(--padding-top-page);
+  margin-top: var(--height-navbar);
+}
+
 .page {
   max-width: var(--width-page);
   width: 94vw;
@@ -95,3 +101,47 @@ ul {
 .btn-dark:hover {
   background-color: black;
 }
+
+.d-flex-row-c{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-row-s{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.d-flex-row-e{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.d-flex-column-c{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.d-flex-column-s{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.d-flex-column-e{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+

@@ -2,18 +2,28 @@ import { Link } from "gatsby"
 import React from "react"
 import { BsCart } from "react-icons/bs"
 import styled from "styled-components"
-import { categoriesF,categoriesM } from "../constants/categories"
+import { categoriesF, categoriesM } from "../constants/categories"
+import Logo from "../assets/svg/logo.svg"
 
 const Navbar = () => {
   return (
-    <Wrapper className="nav py-0">
-      <div className="d-flex flex-row align-items-center justify-content-between page-size ">
-        <div className="d-flex flex-row align-items-center">
-          <div className="logo">Fashion</div>
+    <Wrapper className="nav  d-flex flex-column ">
+<div className="position-relative top-container page-size">
+      <div className="logo  position-absolute top-50 start-50 translate-middle ">
+        <Logo />
+       
+      </div>
+      <Link to="/cart" className="cart-link pe-5">
+          <BsCart />
+        </Link>
+      </div>
 
-          <div className="gender-container">
+
+      <div className="d-flex bottom-container page-size   align-items-center justify-content-center" >
+        <div className="d-flex w-25  justify-content-between">
+          <div className="gender-container ">
             <Link to="/women" className="gender-link ">
-              Kobieta
+              ONA
             </Link>
             <div className="submenu px-5">
               <div className="cat-list">
@@ -27,8 +37,8 @@ const Navbar = () => {
           </div>
 
           <div className="gender-container">
-            <Link to="/men" className="gender-link ">
-              Mężczyzna
+            <Link to="/men" className="gender-link  ">
+             ON
             </Link>
             <div className="submenu px-5">
               {" "}
@@ -41,12 +51,14 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <div className="overlay"></div>     
+          <div className="overlay"></div>
+        </div>
 
         </div>
-        <Link to="/cart" className="cart-link">
-          <BsCart />
-        </Link>
+
+      <div className="d-flex flex-row align-items-center justify-content-between ">
+        
+        
       </div>
     </Wrapper>
   )
@@ -59,28 +71,39 @@ const Wrapper = styled.nav`
   width: 100vw;
   z-index: 99;
   background-color: white;
+  /* height: var(--height-navbar); */
 
-  --logo-width: 100px;
+
+  --logo-width: 200px;
   --logo-margin: 50px;
 
   .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     width: var(--logo-width);
-    margin-right: var(--logo-margin);
+  }
+
+  .top-container{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .bottom-container{
+    border-bottom: 1px solid black;
+    height: 50px;
   }
 
   .gender-link {
-    height: var(--height-navbar);
-    margin-right: 1rem;
     display: flex;
     align-items: center;
-    font-size: 18px;
+    font-size: 22px;
     color: black;
     box-sizing: content-box;
   }
 
-  .gender-container:hover .gender-link{
+  .gender-container:hover .gender-link {
     height: 68px;
     border-top: inset 2px transparent;
     border-bottom: inset 2px var(--clr-accent);
@@ -110,6 +133,7 @@ const Wrapper = styled.nav`
     margin-left: calc(var(--logo-width) + var(--logo-margin));
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
   }
   .cat-list a {
     padding-bottom: 15px;
@@ -119,18 +143,18 @@ const Wrapper = styled.nav`
     text-decoration: underline;
   }
 
-  .overlay{
+  .overlay {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    top:var(--height-navbar);
-    left:0;
-    background-color: rgba(0,0,0,0.5);
+    top: var(--height-navbar);
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
     display: none;
   }
 
-  .gender-container:hover ~ .overlay{
+  .gender-container:hover ~ .overlay {
     display: block;
   }
 `

@@ -7,10 +7,9 @@ import { getImage } from "gatsby-plugin-image"
 import { useDispatch } from "react-redux"
 import { cartActions } from "../store/store"
 
-
 const CartItem = ({ item }) => {
   const dispatch = useDispatch()
-  const { price, img, name, id, quantity,size } = item
+  const { price, img, name, id, quantity, size } = item
 
   const addHandler = () => {
     dispatch(cartActions.incrementItem({ id }))
@@ -35,28 +34,36 @@ const CartItem = ({ item }) => {
       <div className=" py-1">
         <h6>{name}</h6>
         <p className="mb-0">Cena: {price} PLN</p>
-        <p className="mt-0">Rozmiar: <strong>{size}</strong></p>
+        <p className="mt-0">
+          Rozmiar: <strong>{size}</strong>
+        </p>
         <div className="mt-auto">
-          <p className="lead mb-1">
-            Ilość: {" "}
-          </p>
-          <button
-            className={`btn btn-sm  btn-outline-dark me-1 ${
-              quantity === 9 ? "disabled" : ""
-            }`}
-            onClick={addHandler}
+          <p className="lead mb-1">Ilość: </p>
+          <div
+            style={{ width: "100px" }}
+            className="d-flex align-items-center justify-content-between"
           >
-            <BsPlusLg />
-          </button>
-          <span className="mx-2"><strong>{quantity}</strong></span>
-          <button
-            className={`btn btn-sm  btn-outline-dark me-1 ${
-              quantity === 1 ? "disabled" : ""
-            }`}
-            onClick={removeOneHandler}
-          >
-            <MdRemove />
-          </button>
+            <button
+              className={`btn btn-sm  btn-outline-dark me-1 ${
+                quantity === 1 ? "disabled" : ""
+              }`}
+              onClick={removeOneHandler}
+            >
+              <MdRemove />
+            </button>
+            <span className="lead">
+              <strong>{quantity}</strong>
+            </span>
+
+            <button
+              className={`btn btn-sm  btn-outline-dark me-1 ${
+                quantity === 9 ? "disabled" : ""
+              }`}
+              onClick={addHandler}
+            >
+              <BsPlusLg />
+            </button>
+          </div>
         </div>
       </div>
       <div className="d-flex flex-column justify-content-between align-items-end ms-auto h-100 ">
