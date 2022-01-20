@@ -7,11 +7,14 @@ import Logo from "../assets/svg/logo.svg"
 import { capitalize } from "../utils/utils"
 import { MdClose } from "react-icons/md"
 import { useStaticQuery, graphql } from "gatsby"
-import { ImMenu } from "react-icons/im"
+import { BiMenu } from "react-icons/bi"
+import { useSelector } from "react-redux"
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar}) => {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
+
+  const totalItems = useSelector(state=>state.cart.totalItems)
 
   const data = useStaticQuery(graphql`
     {
@@ -40,11 +43,12 @@ const Navbar = () => {
       <div className="d-flex-row-b nav-size-horizontal mx-auto position-relative">
         <div className="d-flex-row-c">
           <div className="d-flex-row-c">
-            <button className="btn-icon d-block d-md-none">
-              <ImMenu />
+            <button onClick={toggleSidebar} className="btn-icon d-block d-md-none">
+              <BiMenu style={{fontSize:'24px'}} />
             </button>
-<Link to='/'>
-            <Logo className="logo" /></Link>
+            <Link to="/">
+              <Logo className="logo" />
+            </Link>
           </div>
 
           <div className="gender-container">
@@ -80,14 +84,12 @@ const Navbar = () => {
           <div className="overlay"></div>
         </div>
         <div>
-          <button
-            onClick={() => setSearchOpen(true)}
-            className="btn-icon me-3"
-          >
+          <button onClick={() => setSearchOpen(true)} className="btn-icon me-3">
             <BsSearch />
           </button>
-          <Link to="/cart" className="btn-icon cart-link">
+          <Link to="/cart" className="btn-icon cart-link position-relative">
             <BsCartFill />
+            {!!totalItems && <div className="counter">{totalItems}</div>}
           </Link>
         </div>
       </div>
@@ -136,16 +138,31 @@ const Wrapper = styled.nav`
   --logo-width: 180px;
   --logo-margin: 50px;
 
+  .counter{
+    border-radius: 100%;
+    background-color: var(--clr-accent);
+    border:1px solid white;
+    color:white;
+    font-size: 14px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    z-index: 100;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+  }
+
   .logo {
     width: var(--logo-width);
     margin-right: var(--logo-margin);
+    margin-top: 0.5rem
   }
-
 
   .close-btn {
     color: white;
     position: fixed;
-    top: 10%;
+    top: 5%;
     right: 10%;
     z-index: 101;
     font-size: 36px;
@@ -187,8 +204,6 @@ const Wrapper = styled.nav`
     color: white;
   }
 
-
-
   .gender-link {
     height: var(--height-navbar);
     margin-right: 1rem;
@@ -208,7 +223,7 @@ const Wrapper = styled.nav`
 
     .logo {
       width: 120px;
-      margin-left: 1rem;
+      margin-left: 0.5rem;
     }
   }
 

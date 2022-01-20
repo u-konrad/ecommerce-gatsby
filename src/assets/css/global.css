@@ -26,11 +26,15 @@
 
 :root {
   --clr-accent: #d9832e;
+  --clr-accent-2: #a35a11;
+
   --clr-bg: #f4f4f4;
   --height-navbar: 80px;
   --width-page: 1420px;
   --padding-top-page: 70px;
-  --padding-x-mobile:1rem
+  --padding-x-mobile:1rem;
+  --transition: all 0.3s linear;
+
 }
 
 body {
@@ -83,6 +87,7 @@ a:hover {
 ul {
   list-style-type: none;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .nav-size-horizontal{
@@ -124,7 +129,7 @@ ul {
 .btn-icon {
   border: none;
   background-color: transparent;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .btn-icon:hover {

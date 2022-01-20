@@ -24,6 +24,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
     <Layout>
       <Wrapper className="page-size-horizontal page-top">
         <div className="sidebar ">
+         
           <ul>
             <li className="category-item mb-2">
               <Link to={`/${linkGender}`}>
@@ -40,6 +41,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
               </li>
             ))}
           </ul>
+          <hr></hr>
         </div>
         <div className="items-panel ">
           <Breadcrumb
@@ -66,6 +68,11 @@ const Wrapper = styled.main`
 
   .category-item {
     padding-bottom: 15px;
+  }
+
+  .category-item:last-of-type{
+padding-bottom: 0;
+
   }
   .category-item a:hover {
     text-decoration: underline;
@@ -131,7 +138,7 @@ const Wrapper = styled.main`
     }
 
     .grid-item h5 {
-      font-size: 18px;
+      font-size: 16px;
       padding-left: var(--padding-x-mobile);
     }
 
