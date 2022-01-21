@@ -20,17 +20,17 @@ const CartPage = () => {
 
   return (
     <Layout>
-      <Wrapper className="page-top page-size-horizontal">
+      <Wrapper className="page-size-horizontal page-top">
         {cartIsFull ? (
-          <Fragment>
-            <h1 className="mb-3">Koszyk</h1>
-            <div className="top-container">
-              <div className="items-container">
+          <div className="page-wrapper">
+            <h1 className="mb-3 ps-4 ps-md-5 pe-lg-5">Koszyk</h1>
+            <div className="top-container ">
+              <div className="items-container px-4 ps-md-5 pe-lg-5">
                 {itemsArray.map((item, index) => (
                   <CartItem key={index} item={item} />
                 ))}
               </div>
-              <div className="payment-container py-5 px-3 px-sm-5">
+              <div className="payment-container py-5 px-4 px-sm-5">
                 <div className="d-flex justify-content-between mb-4">
                   <span>Cena produktów:</span>
                   <span>{totalPrice} PLN</span>
@@ -51,12 +51,12 @@ const CartPage = () => {
                 </button>
               </div>
             </div>
-          </Fragment>
+          </div>
         ) : (
-          <div className="w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+          <div className="w-100 h-100 d-flex flex-column align-items-center justify-content-center empty-container">
             <p className="lead text-muted">Twój koszyk jest pusty.</p>
             <p>Zapraszamy do zakupów.</p>
-            <Link to='/' className="btn btn-outline-dark btn-sharp">
+            <Link to="/" className="btn btn-outline-dark btn-sharp">
               Strona główna
             </Link>
           </div>
@@ -67,6 +67,16 @@ const CartPage = () => {
 }
 
 const Wrapper = styled.main`
+
+.page-wrapper{
+  padding-top: var(--padding-top-page);
+}
+
+.empty-container{
+  min-height: calc(100vh - var(--height-navbar) - 72px );
+
+}
+
   .top-container {
     display: flex;
     flex-direction: row;
@@ -90,7 +100,11 @@ const Wrapper = styled.main`
     .payment-container {
       width: 100%;
     }
+    .page-wrapper{
+    padding-top: 25px;
   }
+  }
+
 `
 
 export default CartPage

@@ -19,7 +19,6 @@
   font-style: normal;
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -32,13 +31,14 @@
   --height-navbar: 80px;
   --width-page: 1420px;
   --padding-top-page: 70px;
-  --padding-x-mobile:1rem;
+  --padding-x-mobile: 1rem;
   --transition: all 0.3s linear;
-
 }
 
 body {
   position: relative;
+  overflow-x: hidden;
+  height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -46,7 +46,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #DCDCDC;
+  background: #dcdcdc;
 }
 
 /* Handle */
@@ -90,15 +90,14 @@ ul {
   margin-bottom: 0;
 }
 
-.nav-size-horizontal{
+.nav-size-horizontal {
   width: 100vw;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
-@media screen and (max-width:768px) {
-
-  .nav-size-horizontal{
+@media screen and (max-width: 768px) {
+  .nav-size-horizontal {
     padding-left: var(--padding-x-mobile);
     padding-right: 2rem;
   }
@@ -111,12 +110,17 @@ ul {
   margin-right: auto;
 }
 
-.page-top{
-  padding-top: var(--padding-top-page);
-  margin-top: var(--height-navbar);
+.page-top {
+  /* padding-top: calc(var(--height-navbar))!important; */
+  margin-top: var(--height-navbar)!important;
+  min-height: calc(100vh - var(--height-navbar) - 72px );
 }
 
-
+@media screen and (max-width: 569px) {
+  /* .page-top {
+    padding-top: 25px;
+  } */
+}
 
 .btn-sharp {
   border-radius: 0;
@@ -133,10 +137,5 @@ ul {
 }
 
 .btn-icon:hover {
-color: dimgray;
+  color: dimgray;
 }
-
-
-
-
-

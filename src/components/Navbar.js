@@ -43,7 +43,7 @@ const Navbar = ({toggleSidebar}) => {
       <div className="d-flex-row-b nav-size-horizontal mx-auto position-relative">
         <div className="d-flex-row-c">
           <div className="d-flex-row-c">
-            <button onClick={toggleSidebar} className="btn-icon d-block d-md-none">
+            <button onClick={toggleSidebar} className="btn-icon d-block d-md-none ps-0">
               <BiMenu style={{fontSize:'24px'}} />
             </button>
             <Link to="/">

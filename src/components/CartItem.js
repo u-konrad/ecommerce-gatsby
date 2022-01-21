@@ -26,22 +26,21 @@ const CartItem = ({ item }) => {
   return (
     <Wrapper className="d-flex align-items-center justify-content-start py-2 mb-3">
       <GatsbyImage
-        width="100"
         className="product-img"
         image={getImage(img)}
         alt=""
       />
-      <div className=" py-1">
+      <div className="d-flex-column-b align-items-start">
         <h6>{name}</h6>
         <p className="mb-0">Cena: {price} PLN</p>
         <p className="mt-0">
           Rozmiar: <strong>{size}</strong>
         </p>
         <div className="mt-auto">
-          <p className="lead mb-1">Ilość: </p>
+          <p className="mb-1">Ilość: </p>
           <div
             style={{ width: "100px" }}
-            className="d-flex align-items-center justify-content-between"
+            className="d-flex align-items-center justify-content-between mt-auto"
           >
             <button
               className={`btn btn-sm  btn-outline-dark ${
@@ -66,8 +65,8 @@ const CartItem = ({ item }) => {
           </div>
         </div>
       </div>
-      <div className="d-flex flex-column justify-content-between align-items-end ms-auto h-100 ">
-        <p className="lead">{quantity * price} PLN</p>
+      <div className="d-flex flex-column justify-content-between align-items-end ms-auto  ">
+        <p className="total lead">{quantity * price} PLN</p>
         <button
           className="btn btn-sm btn-outline-danger"
           onClick={removeAllHandler}
@@ -83,6 +82,10 @@ const Wrapper = styled.div`
   border-bottom: 1px solid grey;
   height: 180px;
 
+  &>div{
+    height: 150px;
+  }
+
   .product-img {
     width: 100px;
     aspect-ratio: 2/3;
@@ -93,6 +96,16 @@ const Wrapper = styled.div`
   @media screen and (max-width: 576px) {
     .product-img {
       margin-right: 0.5rem;
+      width:'80px'
+    }
+
+    .total{
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    p{
+      font-size: 14px;
     }
   }
 `
