@@ -40,7 +40,7 @@ const Navbar = ({toggleSidebar}) => {
 
   return (
     <Wrapper className="nav  py-0">
-      <div className="d-flex-row-b nav-size-horizontal mx-auto position-relative">
+      <div className="d-flex-row-b w-100 nav-padding-left nav-padding-right mx-auto position-relative">
         <div className="d-flex-row-c">
           <div className="d-flex-row-c">
             <button onClick={toggleSidebar} className="btn-icon d-block d-md-none ps-0">

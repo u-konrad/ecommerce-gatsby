@@ -1,4 +1,4 @@
-import React, { Fragment,useState } from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import { categoriesF, categoriesM } from "../constants/categories"
@@ -7,7 +7,7 @@ import ClothingItem from "../components/ClothingItem"
 import { capitalize, convertGender } from "../utils/utils"
 import Breadcrumb from "../components/Breadcrumb"
 import CartModal from "../components/CartModal"
-
+import Seo from "../components/Seo"
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const linkGender = convertGender(pageContext.gender).nounPlural
@@ -28,7 +28,8 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Wrapper className="page-size-horizontal page-top mb-5">
+      <Seo title="Kup ubrania online!" />
+      <Wrapper className="page-size-horizontal padding-top-page page-size-vertical mb-5">
         <div className="sidebar ">
           <ul>
             <li className="category-item mb-2">
@@ -62,7 +63,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
             ))}{" "}
           </div>
         </div>
-        <CartModal show={showModal} handleClose={handleClose}/>
+        <CartModal show={showModal} handleClose={handleClose} />
       </Wrapper>
     </Layout>
   )
@@ -73,7 +74,6 @@ const Wrapper = styled.main`
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  padding-top: var(--padding-top-page);
 
   .category-item {
     padding-bottom: 15px;
@@ -96,6 +96,12 @@ const Wrapper = styled.main`
     left: max(calc((100vw - var(--width-page)) / 2), 3rem);
   }
 
+  @media screen and (max-width:992px) {
+    .sidebar a{
+      font-size: 14px;
+    }
+  }
+
   .items-panel {
     grid-column: 3/-1;
     grid-row: 1/1;
@@ -112,12 +118,11 @@ const Wrapper = styled.main`
     width: 100%;
   }
 
-  .img-container{
+  .img-container {
     overflow: hidden;
   }
 
   .list-img {
-    /* height: 500px; */
     width: 100%;
     object-fit: cover;
     transition: 0.5s ease-in-out;
@@ -132,18 +137,16 @@ const Wrapper = styled.main`
     left: 0;
     background-color: white;
     color: black;
-    transition: 0.5s ease-in-out; 
+    transition: 0.5s ease-in-out;
     z-index: 100;
-    opacity:0
+    opacity: 0;
   }
 
   .img-container:hover .panel {
-    opacity:0.8
+    opacity: 0.8;
   }
 
-
-
-  @media screen and (max-width: 1170px) {
+  @media screen and (max-width: 1200px) {
     .items-container {
       grid-template-columns: repeat(2, 1fr);
       grid-column-gap: 0.5rem;
@@ -165,17 +168,21 @@ const Wrapper = styled.main`
 
     .items-panel h2 {
       font-size: 22px;
-      padding-left: var(--padding-x-mobile);
+      padding-left: var(--padding-left-mobile);
     }
 
     .grid-item h5 {
       font-size: 16px;
-      padding-left: var(--padding-x-mobile);
+      padding-left: var(--padding-left-mobile);
     }
 
     .grid-item p {
       font-size: 16px;
-      padding-left: var(--padding-x-mobile);
+      padding-left: var(--padding-left-mobile);
+    }
+
+    .breadcrumb {
+      padding-left: var(--padding-left-mobile);
     }
   }
 `

@@ -26,19 +26,31 @@
 :root {
   --clr-accent: #d9832e;
   --clr-accent-2: #a35a11;
-
-  --clr-bg: #f4f4f4;
+  --clr-bg:white;
+  --clr-bg-2: #f4f4f4;
+  --clr-footer:#111;
   --height-navbar: 80px;
+  --height-footer: 72px;
   --width-page: 1420px;
-  --padding-top-page: 70px;
-  --padding-x-mobile: 1rem;
+  --padding-top-desktop: 70px;
+  --padding-top-mobile:25px;
+  --padding-x-desktop: 3rem;
+  --padding-left-mobile: 1rem;
+  --padding-right-mobile: 2rem;
   --transition: all 0.3s linear;
+
+  --sm: 576px;
+  --md: 768px;
+  --lg: 992px;
+  --xl: 1200px;
+  --xxl: 1400px;
 }
 
 body {
   position: relative;
   overflow-x: hidden;
   height: 100%;
+  background-color: var(--clr-bg);
 }
 
 ::-webkit-scrollbar {
@@ -90,16 +102,31 @@ ul {
   margin-bottom: 0;
 }
 
-.nav-size-horizontal {
-  width: 100vw;
-  padding-left: 3rem;
-  padding-right: 3rem;
+.nav-padding-left {
+  padding-left: var(--padding-x-desktop);
+}
+
+.nav-padding-right {
+  padding-right: var(--padding-x-desktop);
+}
+
+.padding-top-page{
+  padding-top: var(--padding-top-desktop);
+}
+
+@media screen and (max-width: 1200px) {
+  .padding-top-page{
+    padding-top: var(--padding-top-mobile);
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .nav-size-horizontal {
-    padding-left: var(--padding-x-mobile);
-    padding-right: 2rem;
+  .nav-padding-left {
+    padding-left: var(--padding-left-mobile);
+  }
+
+  .nav-padding-right {
+    padding-right: var(--padding-right-mobile);
   }
 }
 
@@ -110,16 +137,13 @@ ul {
   margin-right: auto;
 }
 
-.page-top {
-  /* padding-top: calc(var(--height-navbar))!important; */
-  margin-top: var(--height-navbar)!important;
-  min-height: calc(100vh - var(--height-navbar) - 72px );
+.page-size-vertical {
+  margin-top: var(--height-navbar) !important;
+  min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
 }
 
-@media screen and (max-width: 569px) {
-  /* .page-top {
-    padding-top: 25px;
-  } */
+.central-container{
+  min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
 }
 
 .btn-sharp {

@@ -4,8 +4,7 @@ import { Link } from "gatsby"
 import { capitalize, convertGender } from "../utils/utils"
 import styled from "styled-components"
 
-const Breadcrumb = ({ gender, category }) => {
-  console.log(category)
+const Breadcrumb = ({ gender, category, lastIsActive = false }) => {
   return (
     <Wrapper aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -20,9 +19,19 @@ const Breadcrumb = ({ gender, category }) => {
                 {capitalize(convertGender(gender).nounSingular)}
               </Link>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">
-              {capitalize(category)}
-            </li>
+            {!lastIsActive ? (
+              <li class="breadcrumb-item active" aria-current="page">
+                {capitalize(category)}
+              </li>
+            ) : (
+              <Link
+                class="breadcrumb-item"
+                aria-current="page"
+                to={`/${convertGender(gender).nounPlural}/${category}`}
+              >
+                {capitalize(category)}
+              </Link>
+            )}
           </Fragment>
         ) : (
           <li class="breadcrumb-item active" aria-current="page">
@@ -41,9 +50,7 @@ const Wrapper = styled.nav`
     color: var(--clr-accent);
   }
 
-  @media screen and (max-width:768px) {
-      padding-left:var(--padding-x-mobile)
-  }
+
 `
 
 export default Breadcrumb

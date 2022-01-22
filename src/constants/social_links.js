@@ -1,28 +1,28 @@
 import React from "react"
 import {
   FaFacebookSquare,
-  FaLinkedin,
-  FaGithubSquare
+  FaTwitterSquare,
+  FaYoutubeSquare
 } from "react-icons/fa"
 
 const data = [
   {
     id: 0,
     icon: <FaFacebookSquare className="social-icon"></FaFacebookSquare>,
-    url: "https://www.twitter.com",
+    url: "https://www.facebook.com",
     name:'Facebook'
   },
   {
     id: 1,
-    icon: <FaLinkedin className="social-icon"></FaLinkedin>,
+    icon: <FaTwitterSquare className="social-icon"></FaTwitterSquare>,
     url: "https://www.twitter.com",
-    name:'LinkedIn'
+    name:'Twitter'
 
   },
   {
     id: 3,
-    icon: <FaGithubSquare className="social-icon"></FaGithubSquare>,
-    url: "https://www.twitter.com",
+    icon: <FaYoutubeSquare className="social-icon"></FaYoutubeSquare>,
+    url: "https://www.youtube.com",
     name:'Github'
 
   },

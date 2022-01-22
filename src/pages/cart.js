@@ -1,9 +1,11 @@
-import React, { Fragment } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 import { useSelector } from "react-redux"
 import CartItem from "../components/CartItem"
 import { Link } from "gatsby"
+import Seo from "../components/Seo"
+
 
 const delivery = 0
 
@@ -20,9 +22,10 @@ const CartPage = () => {
 
   return (
     <Layout>
-      <Wrapper className="page-size-horizontal page-top">
+            <Seo title="Kup ubrania online!" />
+      <Wrapper className="page-size-horizontal page-size-vertical">
         {cartIsFull ? (
-          <div className="page-wrapper">
+          <div className="padding-top-page">
             <h1 className="mb-3 ps-4 ps-md-5 pe-lg-5">Koszyk</h1>
             <div className="top-container ">
               <div className="items-container px-4 ps-md-5 pe-lg-5">
@@ -46,14 +49,14 @@ const CartPage = () => {
                     <strong>{totalPrice + delivery} PLN</strong>
                   </span>
                 </div>
-                <button className="w-100 btn btn-dark btn-sharp">
+                <button className="w-100 btn btn-dark btn-sharp" onClick={()=>alert('Koniec wersji demonstracyjnej')}>
                   Do kasy
                 </button>
               </div>
             </div>
           </div>
         ) : (
-          <div className="w-100 h-100 d-flex flex-column align-items-center justify-content-center empty-container">
+          <div className="w-100 h-100 d-flex-column-c my-auto central-container">
             <p className="lead text-muted">Twój koszyk jest pusty.</p>
             <p>Zapraszamy do zakupów.</p>
             <Link to="/" className="btn btn-outline-dark btn-sharp">
@@ -68,14 +71,6 @@ const CartPage = () => {
 
 const Wrapper = styled.main`
 
-.page-wrapper{
-  padding-top: var(--padding-top-page);
-}
-
-.empty-container{
-  min-height: calc(100vh - var(--height-navbar) - 72px );
-
-}
 
   .top-container {
     display: flex;
@@ -92,19 +87,16 @@ const Wrapper = styled.main`
 
   .payment-container {
     width: 450px;
-    background-color: var(--clr-bg);
+    background-color: var(--clr-bg-2);
   }
 
-  @media screen and (max-width: 1170px) {
+  @media screen and (max-width: 1200px) {
     .items-container,
     .payment-container {
       width: 100%;
     }
-    .page-wrapper{
-    padding-top: 25px;
-  }
-  }
 
+  }
 `
 
 export default CartPage
