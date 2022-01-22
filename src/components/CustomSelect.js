@@ -25,11 +25,12 @@ const CustomSelect = ({
 
 const Wrapper = styled(Select)`
 font-family: var(--ff-primary);
-font-weight: bold;
 
   &.small {
     font-size: 14px;
     width: 170px !important;
+    font-weight: bold;
+
   }
   &.small .react-select__control {
     border: none !important;

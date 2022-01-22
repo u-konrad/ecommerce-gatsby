@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import { categoriesF, categoriesM } from "../constants/categories"
 import styled from "styled-components"
 import ClothingItem from "../components/ClothingItem"

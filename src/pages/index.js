@@ -6,23 +6,20 @@ import HomeCarousel from "../components/HomeCarousel"
 
 const IndexPage = () => (
   <Layout>
-      <Seo title="Odzieżowy sklep internetowy"/>
+    <Seo title="Odzieżowy sklep internetowy" />
     <Wrapper className="page-size-vertical">
       <div className="carousel-wrapper">
-     <HomeCarousel/>
+        <HomeCarousel />
       </div>
     </Wrapper>
   </Layout>
 )
 
 const Wrapper = styled.main`
-
-  .carousel-wrapper{
+  .carousel-wrapper {
     height: calc(100vh - var(--height-navbar));
     overflow-y: hidden;
   }
-
-  
 `
 
 export default IndexPage
