@@ -8,12 +8,22 @@ import { capitalize, convertGender } from "../utils/utils"
 import Breadcrumb from "../components/Breadcrumb"
 import CartModal from "../components/CartModal"
 import Seo from "../components/Seo"
+import CustomSelect from "../components/CustomSelect"
+
+const sortTypes = [
+  { value: "DESC", label: "Cena malejąco" },
+  { value: "ASC", label: "Cena rosnąco" },
+]
 
 const CategoryTemplate = ({ data, pageContext }) => {
   const linkGender = convertGender(pageContext.gender).nounPlural
   const titleGender = convertGender(pageContext.gender).adj
 
   const [showModal, setShowModal] = useState(false)
+  const [sortType, setSortType] = useState({
+    value: "DESC",
+    label: "Cena malejąco",
+  })
 
   const handleClose = () => setShowModal(false)
 
@@ -56,11 +66,29 @@ const CategoryTemplate = ({ data, pageContext }) => {
             category={pageContext.category}
             gender={pageContext.gender}
           />
-          <h2 className="mb-3">{title}</h2>
+         <div className="d-flex justify-content-between flex-column flex-sm-row"><h2 className="mb-3">{title}</h2>
+         <div className="d-flex-row-s align-items-baseline ps-3 ps-sm-0 pe-4 pe-md-0">
+           <p className="d-inline-block  "><small>Sortuj:</small> </p>
+          <CustomSelect
+            onChange={e => setSortType(e)}
+            value={sortType}
+            options={sortTypes}
+            placeholder="Sortuj według"
+            className=" mb-3  small"
+          /></div>
+          </div> 
           <div className="items-container">
-            {data.allContentfulClothing.nodes.map(item => (
-              <ClothingItem item={item} showModal={setShowModal} />
-            ))}{" "}
+            {data.allContentfulClothing.nodes
+              .sort((a, b) => {
+                if (sortType.value === "ASC") {
+                  return a.price - b.price
+                } else {
+                  return b.price - a.price
+                }
+              })
+              .map(item => (
+                <ClothingItem item={item} showModal={setShowModal} />
+              ))}{" "}
           </div>
         </div>
         <CartModal show={showModal} handleClose={handleClose} />
@@ -96,8 +124,8 @@ const Wrapper = styled.main`
     left: max(calc((100vw - var(--width-page)) / 2), 3rem);
   }
 
-  @media screen and (max-width:992px) {
-    .sidebar a{
+  @media screen and (max-width: 992px) {
+    .sidebar a {
       font-size: 14px;
     }
   }
@@ -167,7 +195,7 @@ const Wrapper = styled.main`
     }
 
     .items-panel h2 {
-      font-size: 22px;
+      font-size: 26px;
       padding-left: var(--padding-left-mobile);
     }
 

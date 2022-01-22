@@ -46,7 +46,7 @@ const ClothingItem = ({ item,showModal }) => {
       <Link className="btn-icon" to={`/${item.id}`}>
       <h5 className="mt-2">{item.name}</h5>
       </Link>
-      <p>{item.price} PLN</p>
+      <p>{item.price.toFixed(2)} PLN</p>
     </div>
   )
 }

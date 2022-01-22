@@ -32,7 +32,7 @@ const CartItem = ({ item }) => {
       />
       <div className="d-flex-column-b align-items-start">
         <h6>{name}</h6>
-        <p className="mb-0">Cena: {price} PLN</p>
+        <p className="mb-0">Cena: {price.toFixed(2)} PLN</p>
         <p className="mt-0">
           Rozmiar: <strong>{size}</strong>
         </p>
@@ -66,7 +66,7 @@ const CartItem = ({ item }) => {
         </div>
       </div>
       <div className="d-flex flex-column justify-content-between align-items-end ms-auto  ">
-        <p className="total lead">{quantity * price} PLN</p>
+        <p className="total lead">{(quantity * price).toFixed(2)} PLN</p>
         <button
           className="btn btn-sm btn-outline-danger"
           onClick={removeAllHandler}

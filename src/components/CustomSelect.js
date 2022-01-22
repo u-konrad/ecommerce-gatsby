@@ -2,27 +2,41 @@ import React from "react"
 import styled from "styled-components"
 import Select from "react-select"
 
-
-const options = [
-    { value: "S", label: "S" },
-    { value: "M", label: "M" },
-    { value: "L", label: "L" },
-    { value: "XL", label: "XL" },
-  ]
-
-const CustomSelect = ({onChange}) => {
+const CustomSelect = ({
+  onChange,
+  options,
+  placeholder,
+  className,
+  value,
+  style,
+}) => {
   return (
     <Wrapper
       options={options}
-      placeholder={"Wybierz rozmiar"}
+      placeholder={placeholder}
       classNamePrefix="react-select"
       onChange={onChange}
+      className={className}
+      style={style}
+      value={value}
     />
   )
 }
 
 const Wrapper = styled(Select)`
-.form-select:focus {
+font-family: var(--ff-primary);
+font-weight: bold;
+
+  &.small {
+    font-size: 14px;
+    width: 170px !important;
+  }
+  &.small .react-select__control {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .form-select:focus {
     border-color: black;
     box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.1);
   }
@@ -30,12 +44,13 @@ const Wrapper = styled(Select)`
     padding-left: 0.5rem;
   }
 
-
-
   .react-select__control {
     border-radius: 0;
     border-color: black;
     box-shadow: none;
+  }
+
+  .small .react-select__control {
   }
 
   .react-select__control:hover {

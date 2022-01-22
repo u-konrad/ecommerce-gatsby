@@ -38,6 +38,7 @@
   --padding-left-mobile: 1rem;
   --padding-right-mobile: 2rem;
   --transition: all 0.3s linear;
+  --ff-primary:'poppins', sans-serif;
 
   --sm: 576px;
   --md: 768px;
@@ -77,14 +78,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "poppins", sans-serif !important;
+  font-family: var(--ff-primary) !important;
   font-weight: 700;
 }
 
 p,
 span,
 a {
-  font-family: "poppins", sans-serif;
+  font-family: var(--ff-primary);
 }
 
 a {

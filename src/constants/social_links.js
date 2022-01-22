@@ -23,7 +23,7 @@ const data = [
     id: 3,
     icon: <FaYoutubeSquare className="social-icon"></FaYoutubeSquare>,
     url: "https://www.youtube.com",
-    name:'Github'
+    name:'Youtube'
 
   },
 ]

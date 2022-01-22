@@ -1,10 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql} from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getImage } from "gatsby-plugin-image"
-import { capitalize, convertGender } from "../utils/utils"
 import { cartActions } from "../store/store"
 import { useDispatch } from "react-redux"
 import { useState } from "react"
@@ -13,6 +12,13 @@ import CartModal from "../components/CartModal"
 import CustomSelect from "../components/CustomSelect"
 import Seo from "../components/Seo"
 import  Breadcrumb  from "../components/Breadcrumb"
+
+const sizes= [
+  { value: "S", label: "S" },
+  { value: "M", label: "M" },
+  { value: "L", label: "L" },
+  { value: "XL", label: "XL" },
+]
 
 const ProductPage = ({ data }) => {
   const { name, img, category, gender, price, id } = data.contentfulClothing
@@ -54,14 +60,8 @@ const ProductPage = ({ data }) => {
 
           <div className="info-container nav-padding-right">
             <Breadcrumb gender={gender} category={category} lastIsActive/>
-            {/* <Link
-              className="category-title mb-1"
-              to={`/${convertGender(gender).nounPlural}/${category}`}
-            >
-              {capitalize(category)} {convertGender(gender).adj}
-            </Link> */}
             <h1 className="mb-4">{name}</h1>
-            <h3 className="mb-3">{price} PLN</h3>
+            <h3 className="mb-3">{price.toFixed(2)} PLN</h3>
             <div className="button-container">
               <p
                 className={`prompt-text text-danger mb-1 ${
@@ -70,7 +70,7 @@ const ProductPage = ({ data }) => {
               >
                 <small>Wybierz rozmiar produktu.</small>
               </p>
-              <CustomSelect onChange={e => sizeSelectHandler(e.value)} />
+              <CustomSelect onChange={e => sizeSelectHandler(e.value)} options={sizes} placeholder="Wybierz rozmiar"/>
               <button
                 className="btn btn-dark btn-sharp w-100 d-flex justify-content-center align-items-center mt-2"
                 onClick={addToCartHandler}

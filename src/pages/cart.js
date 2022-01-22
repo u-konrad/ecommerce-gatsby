@@ -36,7 +36,7 @@ const CartPage = () => {
               <div className="payment-container py-5 px-4 px-sm-5">
                 <div className="d-flex justify-content-between mb-4">
                   <span>Cena produktów:</span>
-                  <span>{totalPrice} PLN</span>
+                  <span>{totalPrice.toFixed(2)} PLN</span>
                 </div>
                 <div className="d-flex justify-content-between mb-4">
                   <span>Koszt dostawy:</span>
@@ -46,7 +46,7 @@ const CartPage = () => {
                 <div className="d-flex justify-content-between lead mb-5">
                   <span>Łącznie</span>
                   <span>
-                    <strong>{totalPrice + delivery} PLN</strong>
+                    <strong>{(totalPrice + delivery).toFixed(2)} PLN</strong>
                   </span>
                 </div>
                 <button className="w-100 btn btn-dark btn-sharp" onClick={()=>alert('Koniec wersji demonstracyjnej')}>
