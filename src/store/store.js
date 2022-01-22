@@ -14,6 +14,7 @@ const persistConfig = {
   key: 'cart',
   version: 1,
   storage,
+
 }
 
 const initialCartState = { items: {}, totalItems: 0 }
