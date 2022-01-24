@@ -147,12 +147,34 @@ ul {
   min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
 }
 
+.btn {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
 .btn-sharp {
   border-radius: 0;
 }
 
-.btn-dark:hover {
+
+.btn-dark {
   background-color: black;
+}
+
+.btn-dark:hover {
+  background-color: rgb(51, 51, 51);
+}
+
+.btn-accent {
+  background-color: var(--clr-accent);
+  color: white;
+}
+
+.btn-accent:hover {
+  background-color: var(--clr-accent-2);
+  color: white;
+
 }
 
 .btn-icon {
@@ -164,3 +186,16 @@ ul {
 .btn-icon:hover {
   color: dimgray;
 }
+
+.form-control{
+  border-radius: 0;
+  border-color: black;
+  box-shadow: none;
+}
+
+.form-control:hover, .form-control:focus{
+  box-shadow: 0 0 0 2px black;
+  border-color: black;
+}
+
+
