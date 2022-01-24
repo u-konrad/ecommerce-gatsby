@@ -7,14 +7,13 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+} from "redux-persist"
+import storage from "redux-persist/lib/storage"
 
 const persistConfig = {
-  key: 'cart',
+  key: "cart",
   version: 1,
   storage,
-
 }
 
 const initialCartState = { items: {}, totalItems: 0 }
@@ -24,7 +23,7 @@ const cartSlice = createSlice({
   initialState: initialCartState,
   reducers: {
     addItem(state, action) {
-      const {item} = action.payload
+      const { item } = action.payload
       state.totalItems++
       if (!state.items[item.id]) {
         state.items[item.id] = {
@@ -37,13 +36,13 @@ const cartSlice = createSlice({
     },
     incrementItem(state, action) {
       const { id } = action.payload
-      if (!state.items[id]) return;
+      if (!state.items[id]) return
       state.items[id].quantity++
       state.totalItems++
     },
     decrementItem(state, action) {
       const { id } = action.payload
-      if (!state.items[id]) return;
+      if (!state.items[id]) return
       state.totalItems--
       if (state.items[id].quantity === 1) {
         delete state.items[id]
@@ -53,8 +52,8 @@ const cartSlice = createSlice({
     },
     removeItem(state, action) {
       const { id } = action.payload
-      if (!state.items[id]) return;
-      state.totalItems -=  state.items[id].quantity
+      if (!state.items[id]) return
+      state.totalItems -= state.items[id].quantity
       delete state.items[id]
     },
     clearCart(state, action) {
@@ -64,17 +63,34 @@ const cartSlice = createSlice({
   },
 })
 
+const initialUserState={user:{}}
+
+const userSlice = createSlice({
+  name: "user",
+  initialState: initialUserState,
+  reducers: {
+    setUser(state, action) {
+      state.user = action.payload
+    },
+    clearUser(state, action) {
+      state.user = {}
+    },
+  },
+})
+
 export const createStore = () =>
   configureStore({
     reducer: {
-      cart: persistReducer(persistConfig,cartSlice.reducer),
+      cart: persistReducer(persistConfig, cartSlice.reducer),
+      user:userSlice.reducer
     },
-    middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+    middleware: getDefaultMiddleware =>
+      getDefaultMiddleware({
+        serializableCheck: {
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }),
   })
 
 export const cartActions = cartSlice.actions
+export const userActions =userSlice.actions
