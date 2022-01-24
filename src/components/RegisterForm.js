@@ -37,8 +37,7 @@ const RegisterForm = () => {
         password
       )
 
-
-      await createUser(user, name)
+       createUser(user, {displayName: name })
       setLoading(false)
       actions.resetForm()
     } catch (error) {

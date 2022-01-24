@@ -3,8 +3,8 @@ import { Formik, Form } from "formik"
 import InputField from "./InputField"
 import { BsGoogle } from "react-icons/bs"
 import * as Yup from "yup"
-import { auth } from "../firebase/firebase.utils"
-import { signInWithEmailAndPassword, signInWithGoogle } from "firebase/auth"
+import { auth,signInWithGoogle } from "../firebase/firebase.utils"
+import { signInWithEmailAndPassword,  } from "firebase/auth"
 
 const LoginForm = () => {
 
@@ -57,7 +57,7 @@ const LoginForm = () => {
             Zaloguj
           </button>
 
-          <button type="button" className="btn btn-accent btn-sharp">
+          <button type="button" className="btn btn-accent btn-sharp" onClick={signInWithGoogle}>
             <BsGoogle className="me-2" /> Zaloguj przez Google
           </button>
         </Form>

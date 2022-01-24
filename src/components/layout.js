@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import { useState } from "react"
 import Sidebar from "./Sidebar"
 import { onAuthStateChanged } from "firebase/auth"
-import { auth, database } from "../firebase/firebase.utils"
+import { auth, createUser } from "../firebase/firebase.utils"
 import { onValue, ref } from "firebase/database"
 import { userActions } from "../store/store"
 import { useDispatch } from "react-redux"
@@ -14,16 +14,14 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    onAuthStateChanged(auth, user => {
+    onAuthStateChanged(auth, async user => {
       if (user) {
-        const uid = user.uid
-        const userRef = ref(database, "users/" + uid)
+        const userRef = createUser(user)
+
         onValue(userRef, snapshot => {
           const data = snapshot.val()
           dispatch(userActions.setUser(data))
         })
-      } else {
-        console.log("no user")
       }
     })
   }, [])

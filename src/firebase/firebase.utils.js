@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getDatabase, onValue, ref, set } from "firebase/database"
-import { getAuth } from "firebase/auth"
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCV-17Yh5Q2km0nY5yXL1YXPbzTBei6T3k",
@@ -18,27 +18,24 @@ const app = initializeApp(firebaseConfig)
 export const auth = getAuth(app)
 export const database = getDatabase(app)
 
-async function writeUserData(userId, name, email, createdAt) {
-  await set(ref(database, "users/" + userId), {
-    username: name,
-    email: email,
-    createdAt: createdAt,
+function writeUserData(userId, data) {
+  set(ref(database, "users/" + userId), {
+    ...data,
   })
 }
 
-export const createUser = async (user, name) => {
+export const createUser = (user, additionalData) => {
   if (!user) return
-  console.log(user)
-  const { email, uid } = user
+  const { uid } = user
 
   const userRef = ref(database, "users/" + uid)
 
   onValue(userRef, snapShot => {
-    console.log(snapShot.exists())
     if (!snapShot.exists()) {
+      const { displayName, email } = user
       const createdAt = Date.now()
       try {
-        writeUserData(uid, name, email, createdAt)
+        writeUserData(uid, { displayName, email, createdAt,...additionalData })
       } catch (error) {
         console.log(error.message)
       }
@@ -48,6 +45,9 @@ export const createUser = async (user, name) => {
   return userRef
 }
 
-// const provider = new auth.GoogleAuthProvider()
+const provider = new GoogleAuthProvider()
 // provider.setCustomParameters({ prompt: "select_account" })
-// export const signInWithGoogle = () => auth.signInWithPopup(provider)
+provider.addScope("profile")
+provider.addScope("email")
+export const signInWithGoogle = async () =>
+  await signInWithPopup(auth, provider)
