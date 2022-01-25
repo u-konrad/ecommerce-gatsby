@@ -2,12 +2,13 @@ import React, { Fragment, useState } from "react"
 import { Formik, Form } from "formik"
 import InputField from "./InputField"
 import * as Yup from "yup"
-import { auth, createUser } from "../firebase/firebase.utils"
+import useFirebase from "../firebase/use-firebase"
 import LoadingSpinner from "./LoadingSpinner"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 
 const RegisterForm = () => {
   const [isLoading, setLoading] = useState(false)
+  const { instance, createUser } = useFirebase()
 
   const schema = Yup.object({
     name: Yup.string()
@@ -32,12 +33,12 @@ const RegisterForm = () => {
 
     try {
       const { user } = await createUserWithEmailAndPassword(
-        auth,
+        instance.auth,
         email,
         password
       )
 
-      createUser(user, {displayName: name })
+      createUser(user, { displayName: name })
       setLoading(false)
       actions.resetForm()
     } catch (error) {

@@ -46,7 +46,6 @@ export const createUser = (user, additionalData) => {
 }
 
 const provider = new GoogleAuthProvider()
-// provider.setCustomParameters({ prompt: "select_account" })
 provider.addScope("profile")
 provider.addScope("email")
 export const signInWithGoogle = async () =>

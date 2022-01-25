@@ -3,10 +3,11 @@ import { Formik, Form } from "formik"
 import InputField from "./InputField"
 import { BsGoogle } from "react-icons/bs"
 import * as Yup from "yup"
-import { auth,signInWithGoogle } from "../firebase/firebase.utils"
-import { signInWithEmailAndPassword,  } from "firebase/auth"
+import useFirebase from "../firebase/use-firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 
 const LoginForm = () => {
+  const { instance, signInWithGoogle } = useFirebase()
 
   const schema = Yup.object({
     email: Yup.string()
@@ -23,7 +24,7 @@ const LoginForm = () => {
     const { email, password } = values
 
     try {
-      await signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(instance.auth, email, password)
       actions.resetForm()
     } catch (error) {
       console.log(error)
@@ -57,7 +58,11 @@ const LoginForm = () => {
             Zaloguj
           </button>
 
-          <button type="button" className="btn btn-accent btn-sharp" onClick={signInWithGoogle}>
+          <button
+            type="button"
+            className="btn btn-accent btn-sharp"
+            onClick={signInWithGoogle}
+          >
             <BsGoogle className="me-2" /> Zaloguj przez Google
           </button>
         </Form>

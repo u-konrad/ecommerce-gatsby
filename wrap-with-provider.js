@@ -16,7 +16,9 @@ export default ({ element }) => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <FirebaseProvider>{element}</FirebaseProvider>
+        <FirebaseProvider>
+          {element}
+          </FirebaseProvider>
       </PersistGate>
     </Provider>
   )
