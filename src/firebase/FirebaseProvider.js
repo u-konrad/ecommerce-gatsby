@@ -17,13 +17,12 @@ const FirebaseProvider = ({ children }) => {
         const userRef = createUser(user)
         onValue(userRef, snapshot => {
           const data = snapshot.val()
-          dispatch(userActions.setUser(data))
+          dispatch(userActions.setUser({...data}))
         })
       }
     })
 
     return () => {
-      console.log("unsub")
       unsubscribeAuthState()
     }
   }, [instance, dispatch])

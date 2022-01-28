@@ -59,24 +59,27 @@ const CategoryTemplate = ({ data, pageContext }) => {
               </li>
             ))}
           </ul>
-          <hr></hr>
         </div>
         <div className="items-panel ">
           <Breadcrumb
             category={pageContext.category}
             gender={pageContext.gender}
           />
-         <div className="d-flex justify-content-between flex-column flex-sm-row"><h2 className="mb-3">{title}</h2>
-         <div className="d-flex-row-s align-items-baseline ps-3 ps-sm-0 pe-4 pe-md-0">
-           <p className="d-inline-block  "><small>Sortuj:</small> </p>
-          <CustomSelect
-            onChange={e => setSortType(e)}
-            value={sortType}
-            options={sortTypes}
-            placeholder="Sortuj według"
-            className=" mb-3  small"
-          /></div>
-          </div> 
+          <div className="d-flex justify-content-between flex-column flex-sm-row">
+            <h2 className="mb-3">{title}</h2>
+            <div className="d-flex-row-s align-items-baseline ps-3 ps-sm-0 pe-4 pe-md-0">
+              <p className="d-inline-block  ">
+                <small>Sortuj:</small>{" "}
+              </p>
+              <CustomSelect
+                onChange={e => setSortType(e)}
+                value={sortType}
+                options={sortTypes}
+                placeholder="Sortuj według"
+                className=" mb-3  small"
+              />
+            </div>
+          </div>
           <div className="items-container">
             {data.allContentfulClothing.nodes
               .sort((a, b) => {

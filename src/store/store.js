@@ -63,7 +63,7 @@ const cartSlice = createSlice({
   },
 })
 
-const initialUserState={user:{}}
+const initialUserState={user:null}
 
 const userSlice = createSlice({
   name: "user",
@@ -73,7 +73,7 @@ const userSlice = createSlice({
       state.user = action.payload
     },
     clearUser(state, action) {
-      state.user = {}
+      state.user = null
     },
   },
 })

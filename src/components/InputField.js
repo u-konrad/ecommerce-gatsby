@@ -12,13 +12,13 @@ const InputField = ({
   handleChange,
   divClass='mb-3',
   label,
-  placeholder,
+  placeholder ,
   disabled,
   autocomplete,
   onBlur,
   type,
   style,
-  id
+  id,
 }) => {
   const processedLabel = label ?? name[0].toUpperCase() + name.slice(1);
 
@@ -27,8 +27,10 @@ const InputField = ({
       <label className="form-label " htmlFor={id}>
         {processedLabel}
       </label>
+      {/* <div className="d-flex-row-c">
+      {children} */}
       <Field
-        placeholder={placeholder}
+        placeholder={placeholder|| `Wprowadź ${label.toLowerCase()}...`}
         disabled={disabled}
         as={as}
         name={name}
@@ -46,8 +48,8 @@ const InputField = ({
         autoComplete={autocomplete}
         style={style}
       >
-        {children}
       </Field>
+      {/* </div> */}
       {touched[name] && errors[name] ? (
         <div className="text-danger small">{errors[name]}</div>
       ) : null}

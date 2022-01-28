@@ -115,7 +115,7 @@ ul {
   padding-top: var(--padding-top-desktop);
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
   .padding-top-page{
     padding-top: var(--padding-top-mobile);
   }
@@ -197,5 +197,11 @@ ul {
   box-shadow: 0 0 0 2px black;
   border-color: black;
 }
+
+.popover, .popover-header, .popover-body{
+  border-radius: 0;
+
+}
+
 
 

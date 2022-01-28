@@ -1,20 +1,27 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { Fragment, useState } from "react"
 import { BsCartFill, BsSearch } from "react-icons/bs"
 import styled from "styled-components"
-import { categoriesF, categoriesM } from "../constants/categories"
 import Logo from "../assets/svg/logo.svg"
-import { capitalize } from "../utils/utils"
-import { MdClose } from "react-icons/md"
 import { useStaticQuery, graphql } from "gatsby"
 import { BiMenu } from "react-icons/bi"
 import { useSelector } from "react-redux"
+import useFirebase from "../firebase/use-firebase"
+import { signOut } from "firebase/auth"
+import { useDispatch } from "react-redux"
+import { userActions } from "../store/store"
+import SearchOverlay from "./SearchOverlay"
+import CategoryLinks from "./CategoryLinks"
+import AccountButton from "./AccountButton"
 
-const Navbar = ({toggleSidebar}) => {
+const Navbar = ({ toggleSidebar }) => {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
+  const { instance: firebase, signInWithGoogle } = useFirebase()
+  const dispatch = useDispatch()
 
-  const totalItems = useSelector(state=>state.cart.totalItems)
+  const totalItems = useSelector(state => state.cart.totalItems)
+  const user = useSelector(state => state.user.user)
 
   const data = useStaticQuery(graphql`
     {
@@ -38,89 +45,44 @@ const Navbar = ({toggleSidebar}) => {
         )
       })
 
+  const logoutHandler = () => {
+    dispatch(userActions.clearUser())
+    signOut(firebase.auth)
+  }
+
   return (
     <Wrapper className="nav  py-0">
       <div className="d-flex-row-b w-100 nav-padding-left nav-padding-right mx-auto position-relative">
         <div className="d-flex-row-c">
           <div className="d-flex-row-c">
-            <button onClick={toggleSidebar} className="btn-icon d-block d-md-none ps-0">
-              <BiMenu style={{fontSize:'24px'}} />
+            <button
+              onClick={toggleSidebar}
+              className="btn-icon d-block d-md-none ps-0"
+            >
+              <BiMenu style={{ fontSize: "24px" }} />
             </button>
             <Link to="/">
               <Logo className="logo" />
             </Link>
           </div>
-
-          <div className="gender-container">
-            <Link to="/women" className="gender-link ">
-              Kobieta
-            </Link>
-            <div className="submenu ">
-              <ul className="cat-list ">
-                {categoriesF.map(item => (
-                  <li key={item}>
-                    <Link to={`/women/${item}`}>{capitalize(item)}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="gender-container">
-            <Link to="/men" className="gender-link ">
-              Mężczyzna
-            </Link>
-            <div className="submenu ">
-              {" "}
-              <ul className="cat-list ">
-                {categoriesM.map(item => (
-                  <li key={item}>
-                    <Link to={`/men/${item}`}>{capitalize(item)}</Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="overlay"></div>
+          <CategoryLinks />
         </div>
+
         <div>
           <button onClick={() => setSearchOpen(true)} className="btn-icon me-3">
             <BsSearch />
           </button>
+          <AccountButton user={user} onLogout={logoutHandler} />
+
           <Link to="/cart" className="btn-icon cart-link position-relative">
             <BsCartFill />
             {!!totalItems && <div className="counter">{totalItems}</div>}
           </Link>
         </div>
+        
       </div>
       {searchOpen && (
-        <div className="search-overlay">
-          <button
-            className="close-btn btn-icon"
-            onClick={() => {
-              setQuery("")
-              setSearchOpen(false)
-            }}
-          >
-            <MdClose />
-          </button>
-          <input
-            type="text"
-            className="search-input"
-            value={query}
-            onChange={e => setQuery(e.target.value)}
-            autoFocus
-          ></input>
-          <div className="search-container">
-            <ul>
-              {filteredItems.map((item, index) => (
-                <li key={index}>
-                  <Link to={`/${item.id}`}>{item.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <SearchOverlay {...{ setQuery, setSearchOpen, filteredItems, query }} />
       )}
     </Wrapper>
   )
@@ -138,11 +100,11 @@ const Wrapper = styled.nav`
   --logo-width: 180px;
   --logo-margin: 50px;
 
-  .counter{
+  .counter {
     border-radius: 100%;
     background-color: var(--clr-accent);
-    border:1px solid white;
-    color:white;
+    border: 1px solid white;
+    color: white;
     font-size: 14px;
     position: absolute;
     top: -5px;
@@ -156,7 +118,7 @@ const Wrapper = styled.nav`
   .logo {
     width: var(--logo-width);
     margin-right: var(--logo-margin);
-    margin-top: 0.5rem
+    margin-top: 0.5rem;
   }
 
   .close-btn {
@@ -286,6 +248,35 @@ const Wrapper = styled.nav`
     left: 0;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 100;
+    display: block;
+  }
+
+  .account-group {
+    position: relative;
+  }
+
+  .account-popover {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 100%);
+    display: none;
+    padding: 0.5rem;
+  }
+
+  .account-popover div {
+    background-color: white;
+    width: 300px;
+    padding: 2rem;
+    border: 1px solid black;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .account-popover button {
+    width: 200px;
+  }
+
+  .account-group:hover .account-popover {
     display: block;
   }
 `
