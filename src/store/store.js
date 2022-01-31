@@ -63,7 +63,7 @@ const cartSlice = createSlice({
   },
 })
 
-const initialUserState={user:null}
+const initialUserState = { user: null }
 
 const userSlice = createSlice({
   name: "user",
@@ -78,11 +78,30 @@ const userSlice = createSlice({
   },
 })
 
+const initialAlertState = { text: "", type: "", show: false }
+
+const alertSlice = createSlice({
+  name: "alert",
+  initialState: initialAlertState,
+  reducers: {
+    setAlert(state, action) {
+      state.text = action.payload.text
+      state.type = action.payload.type
+      state.show = true
+    },
+    clearAlert(state, action) {
+      state.text = ""
+      state.show = false
+    },
+  },
+})
+
 export const createStore = () =>
   configureStore({
     reducer: {
       cart: persistReducer(persistConfig, cartSlice.reducer),
-      user:userSlice.reducer
+      user: userSlice.reducer,
+      alert: alertSlice.reducer,
     },
     middleware: getDefaultMiddleware =>
       getDefaultMiddleware({
@@ -92,5 +111,6 @@ export const createStore = () =>
       }),
   })
 
+export const alertActions = alertSlice.actions
 export const cartActions = cartSlice.actions
-export const userActions =userSlice.actions
+export const userActions = userSlice.actions

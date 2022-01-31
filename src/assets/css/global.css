@@ -26,19 +26,19 @@
 :root {
   --clr-accent: #d9832e;
   --clr-accent-2: #a35a11;
-  --clr-bg:white;
+  --clr-bg: white;
   --clr-bg-2: #f4f4f4;
-  --clr-footer:#111;
+  --clr-footer: #111;
   --height-navbar: 80px;
   --height-footer: 72px;
   --width-page: 1420px;
   --padding-top-desktop: 70px;
-  --padding-top-mobile:25px;
+  --padding-top-mobile: 25px;
   --padding-x-desktop: 3rem;
   --padding-left-mobile: 1rem;
   --padding-right-mobile: 2rem;
   --transition: all 0.3s linear;
-  --ff-primary:'poppins', sans-serif;
+  --ff-primary: "poppins", sans-serif;
 
   --sm: 576px;
   --md: 768px;
@@ -111,12 +111,12 @@ ul {
   padding-right: var(--padding-x-desktop);
 }
 
-.padding-top-page{
+.padding-top-page {
   padding-top: var(--padding-top-desktop);
 }
 
 @media screen and (max-width: 768px) {
-  .padding-top-page{
+  .padding-top-page {
     padding-top: var(--padding-top-mobile);
   }
 }
@@ -143,7 +143,7 @@ ul {
   min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
 }
 
-.central-container{
+.central-container {
   min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
 }
 
@@ -156,7 +156,6 @@ ul {
 .btn-sharp {
   border-radius: 0;
 }
-
 
 .btn-dark {
   background-color: black;
@@ -174,7 +173,6 @@ ul {
 .btn-accent:hover {
   background-color: var(--clr-accent-2);
   color: white;
-
 }
 
 .btn-icon {
@@ -187,21 +185,60 @@ ul {
   color: dimgray;
 }
 
-.form-control{
+.form-control {
   border-radius: 0;
   border-color: black;
   box-shadow: none;
 }
 
-.form-control:hover, .form-control:focus{
+.form-control:hover,
+.form-control:focus {
   box-shadow: 0 0 0 2px black;
   border-color: black;
 }
 
-.popover, .popover-header, .popover-body{
+.popover,
+.popover-header,
+.popover-body {
   border-radius: 0;
-
 }
 
+.showing {
+  animation: showing 0.5s ease-in-out;
+}
 
+.hiding {
+  animation: hiding 0.5s ease-out;
+}
 
+.shown {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  /* opacity: 0; */
+  transform: translateY(-100%);
+}
+
+@keyframes showing {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hiding {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

@@ -9,6 +9,9 @@ import Breadcrumb from "../components/Breadcrumb"
 import CartModal from "../components/CartModal"
 import Seo from "../components/Seo"
 import CustomSelect from "../components/CustomSelect"
+import { useDispatch } from "react-redux"
+import { alertActions } from "../store/store"
+import { setAlertWithTimeout } from "../store/alert-actions"
 
 const sortTypes = [
   { value: "DESC", label: "Cena malejąco" },
@@ -18,6 +21,8 @@ const sortTypes = [
 const CategoryTemplate = ({ data, pageContext }) => {
   const linkGender = convertGender(pageContext.gender).nounPlural
   const titleGender = convertGender(pageContext.gender).adj
+
+  const dispatch = useDispatch()
 
   const [showModal, setShowModal] = useState(false)
   const [sortType, setSortType] = useState({

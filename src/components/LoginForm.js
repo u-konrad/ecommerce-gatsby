@@ -5,9 +5,12 @@ import { BsGoogle } from "react-icons/bs"
 import * as Yup from "yup"
 import useFirebase from "../firebase/use-firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
+import { useDispatch } from "react-redux"
+import { setAlertWithTimeout } from "../store/alert-actions"
 
 const LoginForm = () => {
   const { instance, signInWithGoogle } = useFirebase()
+  const dispatch = useDispatch()
 
   const schema = Yup.object({
     email: Yup.string()
@@ -26,8 +29,22 @@ const LoginForm = () => {
     try {
       await signInWithEmailAndPassword(instance.auth, email, password)
       actions.resetForm()
+      dispatch(
+        setAlertWithTimeout({ text: "Udało się zalogować!", type: "success" })
+      )
     } catch (error) {
-      console.log(error)
+      dispatch(setAlertWithTimeout({ text: "Błąd logowania!", type: "error" }))
+    }
+  }
+
+  const googleLoginHandler = async () => {
+    try {
+      await signInWithGoogle()
+      dispatch(
+        setAlertWithTimeout({ text: "Udało się zalogować!", type: "success" })
+      )
+    } catch (err) {
+      dispatch(setAlertWithTimeout({ text: "Błąd logowania!", type: "error" }))
     }
   }
 
@@ -61,7 +78,7 @@ const LoginForm = () => {
           <button
             type="button"
             className="btn btn-accent btn-sharp"
-            onClick={signInWithGoogle}
+            onClick={googleLoginHandler}
           >
             <BsGoogle className="me-2" /> Zaloguj przez Google
           </button>

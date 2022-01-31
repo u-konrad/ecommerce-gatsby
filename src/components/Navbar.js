@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { Fragment, useState } from "react"
+import React, { useState } from "react"
 import { BsCartFill, BsSearch } from "react-icons/bs"
 import styled from "styled-components"
 import Logo from "../assets/svg/logo.svg"
@@ -13,6 +13,7 @@ import { userActions } from "../store/store"
 import SearchOverlay from "./SearchOverlay"
 import CategoryLinks from "./CategoryLinks"
 import AccountButton from "./AccountButton"
+import { setAlertWithTimeout } from "../store/alert-actions"
 
 const Navbar = ({ toggleSidebar }) => {
   const [searchOpen, setSearchOpen] = useState(false)
@@ -45,9 +46,21 @@ const Navbar = ({ toggleSidebar }) => {
         )
       })
 
-  const logoutHandler = () => {
-    dispatch(userActions.clearUser())
-    signOut(firebase.auth)
+  const logoutHandler = async () => {
+    try {
+      await signOut(firebase.auth)
+      dispatch(userActions.clearUser())
+      dispatch(
+        setAlertWithTimeout({ text: "Udało się wylogować!", type: "success" })
+      )
+    } catch (err) {
+      dispatch(
+        setAlertWithTimeout({
+          text: "Błąd podczas wylogowania!",
+          type: "error",
+        })
+      )
+    }
   }
 
   return (
@@ -79,7 +92,6 @@ const Navbar = ({ toggleSidebar }) => {
             {!!totalItems && <div className="counter">{totalItems}</div>}
           </Link>
         </div>
-        
       </div>
       {searchOpen && (
         <SearchOverlay {...{ setQuery, setSearchOpen, filteredItems, query }} />
@@ -278,6 +290,26 @@ const Wrapper = styled.nav`
 
   .account-group:hover .account-popover {
     display: block;
+  }
+
+  .login-popover {
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    box-shadow: none;
+  }
+
+  .login-popover div {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .login-popover button {
+    width: 100%;
+    margin-top: 0.5rem;
   }
 `
 
