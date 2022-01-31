@@ -5,7 +5,7 @@ import * as Yup from "yup"
 import useFirebase from "../firebase/use-firebase"
 import { useSelector } from "react-redux"
 
-const AdressForm = () => {
+const AdressForm = ({ isCheckout = false }) => {
   const { instance: firebase, writeUserData } = useFirebase()
   const user = useSelector(state => state.user.user)
 
@@ -100,7 +100,7 @@ const AdressForm = () => {
                 {...props}
               />
             </div>
-            <h3 className="mt-2">Adres</h3>
+            <h3 className="mt-2">Adres do dostawy</h3>
             <div className="row">
               <InputField
                 divClass="col-md-9 col-12 mb-3"
@@ -153,9 +153,11 @@ const AdressForm = () => {
               />
             </div>
             <div className="w-100 d-flex-row-e mt-2 mb-5">
-              <button type="submit" className="btn btn-dark btn-sharp ">
-                Zapisz
-              </button>
+              {!isCheckout && (
+                <button type="submit" className="btn btn-dark btn-sharp ">
+                  Zapisz
+                </button>
+              )}
             </div>
           </Form>
         )}

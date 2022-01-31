@@ -18,7 +18,6 @@ const CartPage = () => {
     ? itemsArray.map(item => item.quantity * item.price).reduce((a, b) => a + b)
     : 0
 
-  console.log(totalPrice)
 
   return (
     <Layout>
@@ -49,9 +48,9 @@ const CartPage = () => {
                     <strong>{(totalPrice + delivery).toFixed(2)} PLN</strong>
                   </span>
                 </div>
-                <button className="w-100 btn btn-dark btn-sharp" onClick={()=>alert('Koniec wersji demonstracyjnej')}>
+                <Link className="w-100 btn btn-dark btn-sharp" to='/checkout'>
                   Do kasy
-                </button>
+                </Link>
               </div>
             </div>
           </div>

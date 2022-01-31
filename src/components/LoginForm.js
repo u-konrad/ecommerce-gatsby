@@ -8,7 +8,7 @@ import { signInWithEmailAndPassword } from "firebase/auth"
 import { useDispatch } from "react-redux"
 import { setAlertWithTimeout } from "../store/alert-actions"
 
-const LoginForm = () => {
+const LoginForm = ({autoComplete="on"}) => {
   const { instance, signInWithGoogle } = useFirebase()
   const dispatch = useDispatch()
 
@@ -55,7 +55,7 @@ const LoginForm = () => {
       initialValues={initFormValues}
     >
       {props => (
-        <Form>
+        <Form autoComplete={autoComplete}>
           <InputField
             id="login-email"
             name="email"

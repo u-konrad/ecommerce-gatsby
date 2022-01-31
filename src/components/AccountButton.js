@@ -31,7 +31,7 @@ const AccountButton = ({ user, onLogout }) => {
           </div>
         ) : (
           <div className="login-popover w-100">
-            <LoginForm />
+            <LoginForm autoComplete="off"/>
           </div>
         )}
       </div>
