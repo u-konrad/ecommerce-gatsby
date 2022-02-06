@@ -45,7 +45,8 @@ This project requires a Contentful account. After you set up your account, use t
 
 To import, paste the following in your `gatsby-node.js` file:
 
-`const contentfulImport = require('contentful-import')
+```js
+const contentfulImport = require('contentful-import')
 
 const options = {
   contentFile: 'contentful-export.json',
@@ -54,7 +55,7 @@ const options = {
 }
 
 contentfulImport(options)
-`
+```
 
 Once the dependencies are installed, you can run `gatsby develop` to start the application. You will then be able to access it at `localhost:8000`.
 
