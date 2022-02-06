@@ -1,0 +1,2524 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "clothing",
+        "type": "ContentType",
+        "createdAt": "2022-01-17T15:18:33.375Z",
+        "updatedAt": "2022-01-18T08:13:24.039Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-18T08:13:24.039Z",
+        "firstPublishedAt": "2022-01-17T15:18:33.709Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 5,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "displayField": "name",
+      "name": "Clothing",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "price",
+          "name": "price",
+          "type": "Number",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "gender",
+          "name": "gender",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "male",
+                "female"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "category",
+          "name": "category",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "kurtki",
+                "sukienki",
+                "swetry",
+                "spodnie",
+                "koszule",
+                "t-shirty"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "img",
+          "name": "img",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "30382ra23mzv",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 10,
+        "createdAt": "2022-01-17T15:18:33.807Z",
+        "createdBy": {
+          "sys": {
+            "id": "5WJF266nQ9FXVCtodBNQeo",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2022-01-18T08:13:24.526Z",
+        "updatedBy": {
+          "sys": {
+            "id": "5WJF266nQ9FXVCtodBNQeo",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "clothing",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "price",
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "gender",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "category",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "img",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "74auVQs6VC5EgvxgfznaVV",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:19:16.173Z",
+        "updatedAt": "2022-01-17T15:27:41.265Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2022-01-17T15:27:41.265Z",
+        "firstPublishedAt": "2022-01-17T15:27:41.265Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Kurtka skórzana brązowa"
+        },
+        "price": {
+          "en-US": 349.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "kurtki"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2HvDvrXr4BIFGe5oSCyyh5"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "7A7b2gruP6gEPjVsEnFVi8",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:27:52.317Z",
+        "updatedAt": "2022-01-22T13:54:29.456Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2022-01-22T13:54:29.456Z",
+        "firstPublishedAt": "2022-01-17T15:31:19.994Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Koszula różowa"
+        },
+        "price": {
+          "en-US": 119.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "koszule"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "2EnXJSpFlTk3rTrQA6V9b3"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "3Y4XRU95HYlV8CnvSUbUck",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:31:55.313Z",
+        "updatedAt": "2022-01-22T13:54:15.476Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:54:15.476Z",
+        "firstPublishedAt": "2022-01-17T15:32:50.768Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "T-shirt biały"
+        },
+        "price": {
+          "en-US": 89.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "t-shirty"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "6L9gWeLeTkTLj0ENalVtj1"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "5WNEPsVPJqUNRDKhKqrNHu",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:32:58.517Z",
+        "updatedAt": "2022-01-22T13:54:05.968Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:54:05.968Z",
+        "firstPublishedAt": "2022-01-17T15:34:21.748Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Koszula niebieska"
+        },
+        "price": {
+          "en-US": 99.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "koszule"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5yzTtmsPfKKIfyT354uREC"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "2nkhiXWqK0ifetWBiRxd4C",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:35:35.838Z",
+        "updatedAt": "2022-01-22T13:53:56.060Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:53:56.060Z",
+        "firstPublishedAt": "2022-01-17T15:36:31.404Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Koszula biała"
+        },
+        "price": {
+          "en-US": 129.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "koszule"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7b4QqXSZlDxWIJqJTZf8ud"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "6becq3sBzoy01CNm4fMGjO",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:37:34.891Z",
+        "updatedAt": "2022-01-22T13:53:46.297Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:53:46.297Z",
+        "firstPublishedAt": "2022-01-17T15:38:35.628Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Spodnie brązowe"
+        },
+        "price": {
+          "en-US": 149.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "spodnie"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5aae9UsqeINGFEnIPXBMEq"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "5DiSA3q8jWiMWLoNHK3k5A",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:38:45.054Z",
+        "updatedAt": "2022-01-22T13:53:34.931Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2022-01-22T13:53:34.931Z",
+        "firstPublishedAt": "2022-01-17T15:39:33.036Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Spodnie różowe"
+        },
+        "price": {
+          "en-US": 179.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "spodnie"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "726ObUDUa55ic2PY08lMXi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "78CPP14YsfDYWxGAix0xuQ",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:40:08.053Z",
+        "updatedAt": "2022-01-22T13:53:23.677Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 8,
+        "publishedAt": "2022-01-22T13:53:23.677Z",
+        "firstPublishedAt": "2022-01-17T15:41:40.151Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 9,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sweter zielony"
+        },
+        "price": {
+          "en-US": 199.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "swetry"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3SRc1bw9sV5LA13pZzqnlB"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "6jdfQLoiLXdPJ2olXqrDIA",
+        "type": "Entry",
+        "createdAt": "2022-01-17T15:41:46.219Z",
+        "updatedAt": "2022-01-22T13:53:10.149Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:53:10.149Z",
+        "firstPublishedAt": "2022-01-17T16:10:01.202Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sweter brązowy"
+        },
+        "price": {
+          "en-US": 129.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "swetry"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "7dVMUYRiZehwsNU4Fs7wxi"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "6XqJY6bmTkCG9OLAaFN4E",
+        "type": "Entry",
+        "createdAt": "2022-01-17T16:11:19.428Z",
+        "updatedAt": "2022-01-22T13:52:58.613Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 9,
+        "publishedAt": "2022-01-22T13:52:58.613Z",
+        "firstPublishedAt": "2022-01-17T16:12:29.089Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 10,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "T-shirt różowy"
+        },
+        "price": {
+          "en-US": 79.99
+        },
+        "gender": {
+          "en-US": "male"
+        },
+        "category": {
+          "en-US": "t-shirty"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "616951KEqA5QfHMuk1AYQD"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "4Ol6ynqOK9NHWrXASpKtj1",
+        "type": "Entry",
+        "createdAt": "2022-01-17T16:12:41.512Z",
+        "updatedAt": "2022-01-22T13:52:14.076Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 12,
+        "publishedAt": "2022-01-22T13:52:14.076Z",
+        "firstPublishedAt": "2022-01-17T16:13:43.948Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 13,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "T-shirt biały"
+        },
+        "price": {
+          "en-US": 69.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "t-shirty"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "db2aD0ZDad3Hu4Fs44wF2"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "7ySrlJnEVoZMvPWupHMrxd",
+        "type": "Entry",
+        "createdAt": "2022-01-17T16:13:52.780Z",
+        "updatedAt": "2022-01-22T13:52:26.263Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2022-01-22T13:52:26.263Z",
+        "firstPublishedAt": "2022-01-17T16:15:13.851Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sukienka żółta"
+        },
+        "price": {
+          "en-US": 429.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "sukienki"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "lQqeHgdskJ770Ta3cBo9R"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "4XPRRPqDmvKiVXmGVPAIU5",
+        "type": "Entry",
+        "createdAt": "2022-01-17T16:15:19.085Z",
+        "updatedAt": "2022-01-22T13:52:37.188Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 11,
+        "publishedAt": "2022-01-22T13:52:37.188Z",
+        "firstPublishedAt": "2022-01-17T16:16:40.722Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Sukienka biała"
+        },
+        "price": {
+          "en-US": 249.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "sukienki"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1Pk40k1wjz7MXDdlwe6IoF"
+            }
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "3WXJPmg6kobwUwcMXKhZ1A",
+        "type": "Entry",
+        "createdAt": "2022-01-17T16:17:20.613Z",
+        "updatedAt": "2022-01-22T13:52:48.862Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 10,
+        "publishedAt": "2022-01-22T13:52:48.862Z",
+        "firstPublishedAt": "2022-01-17T16:18:12.288Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 3,
+        "version": 11,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "clothing"
+          }
+        }
+      },
+      "fields": {
+        "name": {
+          "en-US": "Kurtka brązowa"
+        },
+        "price": {
+          "en-US": 189.99
+        },
+        "gender": {
+          "en-US": "female"
+        },
+        "category": {
+          "en-US": "kurtki"
+        },
+        "img": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5OdP1juOzntac21DdwdaQz"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "2HvDvrXr4BIFGe5oSCyyh5",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:21:59.424Z",
+        "updatedAt": "2022-01-17T15:22:15.131Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T15:22:15.131Z",
+        "firstPublishedAt": "2022-01-17T15:22:15.131Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "kurtka męska"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/2HvDvrXr4BIFGe5oSCyyh5/aaadb0b334137e24d56f6290851826cb/dmitry-spravko-2cmLR_I_hn0-unsplash.jpg",
+            "details": {
+              "size": 1922350,
+              "image": {
+                "width": 3906,
+                "height": 5859
+              }
+            },
+            "fileName": "dmitry-spravko-2cmLR_I_hn0-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "2EnXJSpFlTk3rTrQA6V9b3",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:29:35.869Z",
+        "updatedAt": "2022-01-17T15:31:11.749Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2022-01-17T15:31:11.749Z",
+        "firstPublishedAt": "2022-01-17T15:31:11.749Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "koszula męska"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/2EnXJSpFlTk3rTrQA6V9b3/df38efdec66a25feea3964565a4a6cc7/podpros-xcQWU0Eff-U-unsplash.jpg",
+            "details": {
+              "size": 971177,
+              "image": {
+                "width": 2400,
+                "height": 3600
+              }
+            },
+            "fileName": "podpros-xcQWU0Eff-U-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "6L9gWeLeTkTLj0ENalVtj1",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:32:30.942Z",
+        "updatedAt": "2022-01-17T15:32:46.351Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T15:32:46.351Z",
+        "firstPublishedAt": "2022-01-17T15:32:46.351Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "t-shirt biały"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/6L9gWeLeTkTLj0ENalVtj1/a2a0a4d0a4ddfd8527b868e6764af722/mediamodifier-fTDWpCxLA0k-unsplash.jpg",
+            "details": {
+              "size": 2122211,
+              "image": {
+                "width": 3487,
+                "height": 5230
+              }
+            },
+            "fileName": "mediamodifier-fTDWpCxLA0k-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "5yzTtmsPfKKIfyT354uREC",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:33:50.723Z",
+        "updatedAt": "2022-01-17T15:34:13.354Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-17T15:34:13.354Z",
+        "firstPublishedAt": "2022-01-17T15:34:13.354Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "koszula blue"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/5yzTtmsPfKKIfyT354uREC/f793a49fa3653478a07e6be30f158b0c/colton-sturgeon-AMp9R24pPUc-unsplash.jpg",
+            "details": {
+              "size": 1282561,
+              "image": {
+                "width": 2581,
+                "height": 3872
+              }
+            },
+            "fileName": "colton-sturgeon-AMp9R24pPUc-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "7b4QqXSZlDxWIJqJTZf8ud",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:36:09.882Z",
+        "updatedAt": "2022-01-17T15:36:26.046Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-17T15:36:26.046Z",
+        "firstPublishedAt": "2022-01-17T15:36:26.046Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "koszula biała"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/7b4QqXSZlDxWIJqJTZf8ud/2f20f05f122707c99f29af04b5f18a0d/laura-chouette-WQgvRkmqRrg-unsplash.jpg",
+            "details": {
+              "size": 820370,
+              "image": {
+                "width": 3456,
+                "height": 4608
+              }
+            },
+            "fileName": "laura-chouette-WQgvRkmqRrg-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "5aae9UsqeINGFEnIPXBMEq",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:38:08.465Z",
+        "updatedAt": "2022-01-17T15:38:31.848Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2022-01-17T15:38:31.848Z",
+        "firstPublishedAt": "2022-01-17T15:38:31.848Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sp brązowe"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/5aae9UsqeINGFEnIPXBMEq/f928a027939169d17fbdf04e3b0c7473/redd-jC7nVH_Sw8k-unsplash.jpg",
+            "details": {
+              "size": 645668,
+              "image": {
+                "width": 2000,
+                "height": 3000
+              }
+            },
+            "fileName": "redd-jC7nVH_Sw8k-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "726ObUDUa55ic2PY08lMXi",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:39:12.556Z",
+        "updatedAt": "2022-01-17T15:39:28.046Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-17T15:39:28.046Z",
+        "firstPublishedAt": "2022-01-17T15:39:28.046Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sp r"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/726ObUDUa55ic2PY08lMXi/e39b16e596361497eccf548140791cf5/engin-akyurt-5raPrOhbKQo-unsplash.jpg",
+            "details": {
+              "size": 931311,
+              "image": {
+                "width": 4480,
+                "height": 6720
+              }
+            },
+            "fileName": "engin-akyurt-5raPrOhbKQo-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "3SRc1bw9sV5LA13pZzqnlB",
+        "type": "Asset",
+        "createdAt": "2022-01-17T15:41:15.956Z",
+        "updatedAt": "2022-01-17T15:41:34.312Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T15:41:34.312Z",
+        "firstPublishedAt": "2022-01-17T15:41:34.312Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sweter z"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/3SRc1bw9sV5LA13pZzqnlB/0546e85227a7eef0f2c85e65a60dfd74/elizeu-dias-mcdao5RP4hI-unsplash.jpg",
+            "details": {
+              "size": 4621993,
+              "image": {
+                "width": 3097,
+                "height": 4646
+              }
+            },
+            "fileName": "elizeu-dias-mcdao5RP4hI-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "7dVMUYRiZehwsNU4Fs7wxi",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:09:43.845Z",
+        "updatedAt": "2022-01-17T16:09:57.167Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T16:09:57.167Z",
+        "firstPublishedAt": "2022-01-17T16:09:57.167Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sweter b"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/7dVMUYRiZehwsNU4Fs7wxi/ada26841455e12c4af333b740ae56877/jonathan-zerger-O7heAa5fYj4-unsplash.jpg",
+            "details": {
+              "size": 1411580,
+              "image": {
+                "width": 3802,
+                "height": 5703
+              }
+            },
+            "fileName": "jonathan-zerger-O7heAa5fYj4-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "616951KEqA5QfHMuk1AYQD",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:11:59.051Z",
+        "updatedAt": "2022-01-17T16:12:25.454Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T16:12:25.454Z",
+        "firstPublishedAt": "2022-01-17T16:12:25.454Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "t-shirt r"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/616951KEqA5QfHMuk1AYQD/0d4ba7b8ce41989365506aeac6b25e4b/marlon-alves-A0mSSCEVh9A-unsplash.jpg",
+            "details": {
+              "size": 3748045,
+              "image": {
+                "width": 4000,
+                "height": 6000
+              }
+            },
+            "fileName": "marlon-alves-A0mSSCEVh9A-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "db2aD0ZDad3Hu4Fs44wF2",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:13:23.869Z",
+        "updatedAt": "2022-01-17T16:13:38.944Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2022-01-17T16:13:38.944Z",
+        "firstPublishedAt": "2022-01-17T16:13:38.944Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "t-shirt b"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/db2aD0ZDad3Hu4Fs44wF2/607fe0a2da9d497a36850e365f4a4962/christian-bolt-VW5VjskNXZ8-unsplash.jpg",
+            "details": {
+              "size": 1215759,
+              "image": {
+                "width": 4255,
+                "height": 6382
+              }
+            },
+            "fileName": "christian-bolt-VW5VjskNXZ8-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "lQqeHgdskJ770Ta3cBo9R",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:14:48.870Z",
+        "updatedAt": "2022-01-17T16:15:03.575Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T16:15:03.575Z",
+        "firstPublishedAt": "2022-01-17T16:15:03.575Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sukienka ż"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/lQqeHgdskJ770Ta3cBo9R/b160e6eee35b11c149b6ceb0a6174c21/rendy-novantino-_jd8I6yBWM4-unsplash.jpg",
+            "details": {
+              "size": 2068772,
+              "image": {
+                "width": 2756,
+                "height": 4899
+              }
+            },
+            "fileName": "rendy-novantino-_jd8I6yBWM4-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "1Pk40k1wjz7MXDdlwe6IoF",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:16:25.920Z",
+        "updatedAt": "2022-01-17T16:16:37.803Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T16:16:37.803Z",
+        "firstPublishedAt": "2022-01-17T16:16:37.803Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "sukienka b"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/1Pk40k1wjz7MXDdlwe6IoF/799aa5b876fdc2346e9698ec9584a7bd/yasu-shots-_y6hMz1pJC0-unsplash.jpg",
+            "details": {
+              "size": 2183539,
+              "image": {
+                "width": 3933,
+                "height": 5899
+              }
+            },
+            "fileName": "yasu-shots-_y6hMz1pJC0-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "id": "5OdP1juOzntac21DdwdaQz",
+        "type": "Asset",
+        "createdAt": "2022-01-17T16:17:35.749Z",
+        "updatedAt": "2022-01-17T16:17:44.854Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2022-01-17T16:17:44.854Z",
+        "firstPublishedAt": "2022-01-17T16:17:44.854Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        }
+      },
+      "fields": {
+        "title": {
+          "en-US": "Kurtka b"
+        },
+        "description": {
+          "en-US": ""
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/30382ra23mzv/5OdP1juOzntac21DdwdaQz/f63c744b921c012109674b2f15e57ced/toa-heftiba-ua9ReZlzcIE-unsplash.jpg",
+            "details": {
+              "size": 734667,
+              "image": {
+                "width": 2624,
+                "height": 3936
+              }
+            },
+            "fileName": "toa-heftiba-ua9ReZlzcIE-unsplash.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "6AydqclsXb13DkePlr8C4q",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "2eaa7b94-633c-4fc5-884a-8a28cb693238"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "createdAt": "2022-01-06T13:31:15Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedAt": "2022-01-06T13:31:15Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "6ABqhm3Zj1ldvBmrDFuypA",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "30382ra23mzv"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "createdAt": "2022-01-06T13:31:15Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "5WJF266nQ9FXVCtodBNQeo"
+          }
+        },
+        "updatedAt": "2022-01-06T13:31:15Z"
+      }
+    }
+  ]
+}

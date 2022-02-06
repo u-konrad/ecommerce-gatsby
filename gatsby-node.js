@@ -1,4 +1,7 @@
 const path = require("path")
+// const contentfulExport = require('contentful-export')
+
+
 
 const categoriesF = ['kurtki','sukienki','swetry','spodnie','koszule','t-shirty']
 const categoriesM = ['kurtki','swetry','spodnie','koszule','t-shirty']
@@ -47,3 +50,12 @@ exports.createPages = async ({ actions }) => {
     })
   })
 }
+
+
+// const exportOptions = {
+//   spaceId: process.env.CONTENTFUL_SPACE_ID,
+//   managementToken:process.env.CONTENTFUL_MANAGEMENT_TOKEN,
+//   queryEntries: ['content_type=clothing']
+// }
+
+// contentfulExport(exportOptions)
