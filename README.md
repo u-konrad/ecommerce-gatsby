@@ -4,7 +4,7 @@ A website for a clothing store built with Gatsby.js
 
 ## Site
 
-Here is a link to the site: [https://journey-book.web.app/](https://journey-book.web.app/)
+Here is a link to the site: [https://clothing-shop-gatsby.netlify.app/](https://clothing-shop-gatsby.netlify.app/)
 
 ![Home page](./src/img/jb-1.jpg)
 
