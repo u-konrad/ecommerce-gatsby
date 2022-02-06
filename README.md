@@ -6,7 +6,7 @@ A website for a clothing store built with Gatsby.js
 
 Here is a link to the site: [https://clothing-shop-gatsby.netlify.app/](https://clothing-shop-gatsby.netlify.app/)
 
-![Home page](./src/img/jb-1.jpg)
+![Home page](./src/assets/images/clothing-home.jpg)
 
 ## Table of contents
 * [General description](#general-description)
