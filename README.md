@@ -42,7 +42,6 @@ Project is created with:
 1. After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
 
 2. This project requires a Contentful account. After you set up your account, use the [contentful-import](https://github.com/contentful/contentful-import) tool to import the data model and sample entries. The exported data is in the `contentful-export.json` file.
-
 To import, paste the following in your `gatsby-node.js` file:
 
 ```js
