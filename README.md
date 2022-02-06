@@ -39,9 +39,9 @@ Project is created with:
 
 ## Setup
 
-After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
+1. After you clone this repo to your desktop, go to its root directory and run `npm install` to install its dependencies.
 
-This project requires a Contentful account. After you set up your account, use the [contentful-import](https://github.com/contentful/contentful-import) tool to import the data model and sample entries. The exported data is in the `contentful-export.json` file.
+2. This project requires a Contentful account. After you set up your account, use the [contentful-import](https://github.com/contentful/contentful-import) tool to import the data model and sample entries. The exported data is in the `contentful-export.json` file.
 
 To import, paste the following in your `gatsby-node.js` file:
 
@@ -57,5 +57,5 @@ const options = {
 contentfulImport(options)
 ```
 
-Once the dependencies are installed, you can run `gatsby develop` to start the application. You will then be able to access it at `localhost:8000`.
+3. Once the dependencies are installed, you can run `gatsby develop` to start the application. You will then be able to access it at `localhost:8000`.
 
