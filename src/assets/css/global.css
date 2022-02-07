@@ -144,7 +144,7 @@ ul {
 }
 
 .central-container {
-  min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
+  min-height: calc(100vh - var(--height-navbar) - 72px);
 }
 
 .btn {

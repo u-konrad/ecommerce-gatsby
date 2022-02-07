@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import AdressForm from "../components/AdressForm"
 
-const AccountPage = () => {
+const ProfilePage = () => {
   return (
     <Layout>
       <Seo title="Twoje konto" />
@@ -45,4 +45,4 @@ const Wrapper = styled.main`
   }
 `
 
-export default AccountPage
+export default ProfilePage
