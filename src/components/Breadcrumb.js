@@ -7,25 +7,25 @@ import styled from "styled-components"
 const Breadcrumb = ({ gender, category, lastIsActive = false }) => {
   return (
     <Wrapper aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item">
           <Link to="/">Główna</Link>
         </li>
 
         {!!category ? (
           <Fragment>
-            <li class="breadcrumb-item">
+            <li className="breadcrumb-item">
               <Link to={`/${convertGender(gender).nounPlural}`}>
                 {capitalize(convertGender(gender).nounSingular)}
               </Link>
             </li>
             {!lastIsActive ? (
-              <li class="breadcrumb-item active" aria-current="page">
+              <li className="breadcrumb-item active" aria-current="page">
                 {capitalize(category)}
               </li>
             ) : (
               <Link
-                class="breadcrumb-item"
+                className="breadcrumb-item"
                 aria-current="page"
                 to={`/${convertGender(gender).nounPlural}/${category}`}
               >
@@ -34,7 +34,7 @@ const Breadcrumb = ({ gender, category, lastIsActive = false }) => {
             )}
           </Fragment>
         ) : (
-          <li class="breadcrumb-item active" aria-current="page">
+          <li className="breadcrumb-item active" aria-current="page">
             {capitalize(convertGender(gender).nounSingular)}
           </li>
         )}

@@ -5,10 +5,15 @@ import * as Yup from "yup"
 import useFirebase from "../firebase/use-firebase"
 import LoadingSpinner from "./LoadingSpinner"
 import { createUserWithEmailAndPassword } from "firebase/auth"
+import { signInWithEmailAndPassword } from "firebase/auth"
+import { setAlertWithTimeout } from "../store/alert-actions"
+import { useDispatch } from "react-redux"
 
 const RegisterForm = () => {
   const [isLoading, setLoading] = useState(false)
   const { instance, createUser } = useFirebase()
+
+  const dispatch = useDispatch()
 
   const schema = Yup.object({
     name: Yup.string()
@@ -38,12 +43,22 @@ const RegisterForm = () => {
         password
       )
 
-      createUser(user, { displayName: name })
+      await createUser(user, { displayName: name })
+      await signInWithEmailAndPassword(instance.auth, email, password)
+
       setLoading(false)
       actions.resetForm()
+      dispatch(
+        setAlertWithTimeout({
+          text: "Udało się zarejestrować!",
+          type: "success",
+        })
+      )
     } catch (error) {
       setLoading(false)
-      console.log(error)
+      dispatch(
+        setAlertWithTimeout({ text: "Błąd rejestracji!", type: "error" })
+      )
     }
   }
 
@@ -79,6 +94,7 @@ const RegisterForm = () => {
               type="password"
               placeholder="Twoje hasło..."
               {...props}
+              autocomplete="on"
             />
             <InputField
               id="passwordConf"
@@ -87,6 +103,7 @@ const RegisterForm = () => {
               type="password"
               placeholder="Twoje hasło..."
               {...props}
+              autocomplete="on"
             />
             <button type="submit" className="btn btn-dark btn-sharp">
               Zarejestruj

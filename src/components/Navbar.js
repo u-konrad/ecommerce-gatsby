@@ -18,7 +18,7 @@ import { setAlertWithTimeout } from "../store/alert-actions"
 const Navbar = ({ toggleSidebar }) => {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState("")
-  const { instance: firebase, signInWithGoogle } = useFirebase()
+  const { instance: firebase } = useFirebase()
   const dispatch = useDispatch()
 
   const totalItems = useSelector(state => state.cart.totalItems)

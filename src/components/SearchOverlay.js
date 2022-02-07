@@ -19,7 +19,7 @@ const SearchOverlay = ({ setQuery, setSearchOpen, filteredItems,query }) => {
         className="search-input"
         value={query}
         onChange={e => setQuery(e.target.value)}
-        autoFocus
+        // autoFocus
       ></input>
       <div className="search-container">
         <ul>

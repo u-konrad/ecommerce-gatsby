@@ -30,8 +30,8 @@
   --clr-bg-2: #f4f4f4;
   --clr-footer: #111;
   --height-navbar: 80px;
-  --height-footer: 72px;
-  --width-page: 1420px;
+  --height-footer: 450px;
+  --width-page: 1280px;
   --padding-top-desktop: 70px;
   --padding-top-mobile: 25px;
   --padding-x-desktop: 3rem;
@@ -133,14 +133,14 @@ ul {
 
 .page-size-horizontal {
   max-width: var(--width-page);
-  width: 100vw;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .page-size-vertical {
   margin-top: var(--height-navbar) !important;
-  min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
+  min-height: calc(100vh - var(--height-navbar) - 72px);
 }
 
 .central-container {

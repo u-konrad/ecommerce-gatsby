@@ -137,7 +137,7 @@ const Wrapper = styled.main`
       grid-column: 1/-1;
       padding-left: var(--padding-left-mobile);
       margin-top: 2rem;
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     padding-top: 0 !important;

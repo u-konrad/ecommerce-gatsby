@@ -11,8 +11,6 @@ const Layout = ({ children }) => {
 
   const alert = useSelector(state => state.alert)
 
-  console.log(alert)
-
   const toggleSidebar = () => {
     setIsOpen(prev => !prev)
   }

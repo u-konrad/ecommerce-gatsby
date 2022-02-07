@@ -11,7 +11,7 @@ const options = [
   { value: "XL", label: "XL" },
 ]
 
-const ClothingItem = ({ item,showModal }) => {
+const ClothingItem = ({ item, showModal }) => {
   const dispatch = useDispatch()
 
   const addToCartHandler = size => {
@@ -24,17 +24,19 @@ const ClothingItem = ({ item,showModal }) => {
   return (
     <div className="grid-item">
       <div className="img-container position-relative">
-      <Link to={`/${item.id}`}>
-        <GatsbyImage className="list-img" image={getImage(item.img)} alt="" /></Link>
+        <Link to={`/${item.id}`}>
+          <GatsbyImage className="list-img" image={getImage(item.img)} alt="" />
+        </Link>
         <div className="panel d-flex-column-c">
           <p>Dodaj do koszyka w rozmiarze:</p>
-          <div onClick={e => {console.log('click')
-            e.stopPropagation()}}>
+          <div>
             {options.map(size => (
               <button
+                key={size.value}
                 className="btn-icon me-3"
                 onClick={event => {
                   addToCartHandler(size.value)
+                  event.stopPropagation()
                 }}
               >
                 {size.label}
@@ -44,7 +46,7 @@ const ClothingItem = ({ item,showModal }) => {
         </div>
       </div>
       <Link className="btn-icon" to={`/${item.id}`}>
-      <h5 className="mt-2">{item.name}</h5>
+        <h5 className="mt-2">{item.name}</h5>
       </Link>
       <p>{item.price.toFixed(2)} PLN</p>
     </div>

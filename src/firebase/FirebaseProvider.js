@@ -1,4 +1,3 @@
-import React from "react"
 import { onAuthStateChanged } from "firebase/auth"
 import useFirebase from "../firebase/use-firebase"
 import { onValue } from "firebase/database"
@@ -25,7 +24,7 @@ const FirebaseProvider = ({ children }) => {
     return () => {
       unsubscribeAuthState()
     }
-  }, [instance, dispatch])
+  }, [instance, dispatch, createUser])
 
   return children
 }

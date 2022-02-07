@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import { Formik, Form } from "formik"
 import InputField from "./InputField"
 import * as Yup from "yup"
 import useFirebase from "../firebase/use-firebase"
 import { useSelector } from "react-redux"
+import { setAlertWithTimeout } from "../store/alert-actions"
+import { useDispatch } from "react-redux"
 
 const AdressForm = ({ isCheckout = false }) => {
-  const { instance: firebase, writeUserData } = useFirebase()
+  const { writeUserData } = useFirebase()
   const user = useSelector(state => state.user.user)
+  const dispatch = useDispatch()
 
   let initFormValues
   if (user) {
@@ -43,8 +46,22 @@ const AdressForm = ({ isCheckout = false }) => {
   })
 
   const submitHandler = async values => {
-    console.log(values)
-    await writeUserData(user.uid, values)
+    try {
+      await writeUserData(user.uid, values)
+      dispatch(
+        setAlertWithTimeout({
+          text: "Zapisano dane!",
+          type: "success",
+        })
+      )
+    } catch (error) {
+      dispatch(
+        setAlertWithTimeout({
+          text: "Błąd przy zapisywaniu danych!",
+          type: "error",
+        })
+      )
+    }
   }
 
   return (

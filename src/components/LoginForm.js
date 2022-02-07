@@ -57,19 +57,18 @@ const LoginForm = ({autoComplete="on"}) => {
       {props => (
         <Form autoComplete={autoComplete}>
           <InputField
-            id="login-email"
             name="email"
             type="text"
             placeholder="Twój email..."
             {...props}
           />
           <InputField
-            id="login-password"
             name="password"
             label="Hasło"
             type="password"
             placeholder="Twoje hasło..."
             {...props}
+            autocomplete="on"
           />
           <button type="submit" className="btn btn-dark btn-sharp">
             Zaloguj

@@ -9,9 +9,7 @@ import Breadcrumb from "../components/Breadcrumb"
 import CartModal from "../components/CartModal"
 import Seo from "../components/Seo"
 import CustomSelect from "../components/CustomSelect"
-import { useDispatch } from "react-redux"
-import { alertActions } from "../store/store"
-import { setAlertWithTimeout } from "../store/alert-actions"
+
 
 const sortTypes = [
   { value: "DESC", label: "Cena malejąco" },
@@ -22,7 +20,6 @@ const CategoryTemplate = ({ data, pageContext }) => {
   const linkGender = convertGender(pageContext.gender).nounPlural
   const titleGender = convertGender(pageContext.gender).adj
 
-  const dispatch = useDispatch()
 
   const [showModal, setShowModal] = useState(false)
   const [sortType, setSortType] = useState({
@@ -44,7 +41,7 @@ const CategoryTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Seo title="Kup ubrania online!" />
-      <Wrapper className="page-size-horizontal padding-top-page page-size-vertical mb-5">
+      <Wrapper className="page-size-horizontal padding-top-page page-size-vertical ">
         <div className="sidebar ">
           <ul>
             <li className="category-item mb-2">
@@ -94,8 +91,8 @@ const CategoryTemplate = ({ data, pageContext }) => {
                   return b.price - a.price
                 }
               })
-              .map(item => (
-                <ClothingItem item={item} showModal={setShowModal} />
+              .map((item,index) => (
+                <ClothingItem key={index} item={item} showModal={setShowModal} />
               ))}{" "}
           </div>
         </div>
@@ -107,6 +104,8 @@ const CategoryTemplate = ({ data, pageContext }) => {
 
 const Wrapper = styled.main`
   --width-sidebar: 150px;
+
+  margin-bottom:100px ;
 
   display: grid;
   grid-template-columns: repeat(12, 1fr);

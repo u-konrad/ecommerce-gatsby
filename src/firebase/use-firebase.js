@@ -1,4 +1,3 @@
-import React from "react"
 import getFirebase from "./firebase"
 import { getDatabase, onValue, ref, update } from "firebase/database"
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth"
