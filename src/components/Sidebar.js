@@ -19,6 +19,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <Accordion.Header>Kobiety</Accordion.Header>
             <Accordion.Body>
               <ul>
+              <li key="all">
+                    <Link to={`/women`} >Wszystko</Link>
+                  </li>
                 {categoriesF.map(item => (
                   <li key={item}>
                     <Link to={`/women/${item}`}>{capitalize(item)}</Link>
@@ -31,6 +34,9 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <Accordion.Header>Mężczyźni</Accordion.Header>
             <Accordion.Body>
               <ul>
+              <li key="all">
+                    <Link to={`/men`}>Wszystko</Link>
+                  </li>
                 {categoriesM.map(item => (
                   <li key={item}>
                     <Link to={`/men/${item}`}>{capitalize(item)}</Link>
@@ -76,6 +82,10 @@ margin-bottom: 0;
    display: block;
    padding-left: 2rem;
    border-bottom: 1px solid whitesmoke;
+ }
+
+ li:first-child{
+   font-weight: bold;
  }
 
   .close-btn {

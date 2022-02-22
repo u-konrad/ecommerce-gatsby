@@ -276,6 +276,8 @@ const Wrapper = styled.nav`
     padding: 0.5rem;
   }
 
+
+
   .account-popover div {
     background-color: white;
     width: 300px;
@@ -290,6 +292,12 @@ const Wrapper = styled.nav`
 
   .account-group:hover .account-popover {
     display: block;
+  }
+
+  @media screen and (max-width:768px){
+    .account-group:hover .account-popover{
+      display: none;
+    }
   }
 
   .login-popover {

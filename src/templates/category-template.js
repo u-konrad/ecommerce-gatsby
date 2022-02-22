@@ -201,6 +201,10 @@ const Wrapper = styled.main`
       display: none;
     }
 
+    .panel {
+      display: none;
+    }
+
     .items-panel h2 {
       font-size: 26px;
       padding-left: var(--padding-left-mobile);
