@@ -15,7 +15,6 @@ const AdressForm = ({ isCheckout = false }) => {
   let initFormValues
   if (user) {
     initFormValues = { ...user }
-    console.log(initFormValues)
   } else {
     initFormValues = {
       firstName: "",
